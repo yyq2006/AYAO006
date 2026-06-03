@@ -1,0 +1,1942 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1026" media="(prefers-color-scheme: dark)">
+<title>思政刷题 · 报告委员长</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Design Tokens ===== */
+:root{
+  --color-bg-grad:linear-gradient(135deg,#EEF2FF 0%,#F5F3FF 35%,#FAF5FF 60%,#EFF6FF 100%);
+  --color-bg-solid:#F5F5F7;
+  --color-surface:rgba(255,255,255,0.72);
+  --color-surface-hover:rgba(255,255,255,0.86);
+  --color-surface-solid:#FFFFFF;
+  --color-accent:#007AFF;
+  --color-accent-hover:#0A84FF;
+  --color-accent-secondary:#8B5CF6;
+  --color-text-primary:#1D1D1F;
+  --color-text-secondary:#6E6E73;
+  --color-text-tertiary:#98989D;
+  --color-success:#34C759;
+  --color-danger:#FF3B30;
+  --color-warning:#FF9500;
+  --color-border:rgba(60,60,67,0.12);
+  --color-border-strong:rgba(60,60,67,0.20);
+  --color-divider:rgba(0,0,0,0.06);
+  --color-tl-close:#FF5F57;--color-tl-min:#FEBC2E;--color-tl-max:#28C840;
+  --glass-tint-window:rgba(255,255,255,0.12);
+  --glass-tint-card:rgba(255,255,255,0.10);
+  --glass-tint-btn:rgba(255,255,255,0.28);
+  --glass-tint-sidebar:rgba(245,245,247,0.16);
+  --glass-highlight:rgba(255,255,255,0.20);
+  --glass-border:rgba(255,255,255,0.22);
+  --glass-saturate:180%;
+  --glass-brightness:1.06;
+  --radius-sm:4px;--radius-md:8px;--radius-lg:12px;--radius-xl:16px;
+  --radius-window:10px;--radius-pill:9999px;--radius-btn:6px;
+  --shadow-sm:0 1px 2px rgba(0,0,0,0.06),0 1px 1px rgba(0,0,0,0.04);
+  --shadow-md:0 1px 2px rgba(0,0,0,0.06),0 8px 24px rgba(0,0,0,0.08);
+  --shadow-lg:0 1px 3px rgba(0,0,0,0.08),0 8px 24px rgba(0,0,0,0.10),0 20px 60px rgba(0,0,0,0.12);
+  --shadow-modal:0 1px 3px rgba(0,0,0,0.08),0 16px 40px rgba(0,0,0,0.14),0 40px 80px rgba(0,0,0,0.18);
+  --shadow-glass:0 8px 32px rgba(0,0,0,0.08),inset 0 1px 0 rgba(255,255,255,0.45),inset 0 -1px 0 rgba(0,0,0,0.04);
+  --shadow-focus:0 0 0 4px rgba(0,122,255,0.18);
+  --font-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-text:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-serif:"Noto Serif SC","SF Pro Display",Georgia,serif;
+  --fs-h1:32px;--fs-h2:22px;--fs-h3:17px;--fs-h4:15px;
+  --fs-body-lg:15px;--fs-body:14px;--fs-caption:12px;--fs-footnote:11px;
+  --fs-quiz-stem:22px;
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;
+  --space-6:24px;--space-7:32px;--space-8:40px;--space-9:48px;--space-10:64px;
+  --ease-standard:cubic-bezier(0.4,0,0.2,1);
+  --ease-out-quart:cubic-bezier(0.25,1,0.5,1);
+  --ease-spring:cubic-bezier(0.34,1.56,0.64,1);
+  --dur-instant:80ms;--dur-fast:150ms;--dur-base:200ms;
+  --dur-slow:280ms;--dur-modal:320ms;--dur-page:400ms;
+  --sidebar-w:240px;--toolbar-h:44px;--titlebar-h:36px;
+  --max-content:920px;--max-quiz:720px;--max-setup:640px;
+  --bg-image:url("backgrounds/bg-1.jpg"); /* 默认=第2张·天安门, 用户可在设置页切换 bg-1~4 */
+  --z-bg:0;--z-content:1;--z-sticky:100;--z-modal:1000;--z-toast:1100;
+}
+[data-theme="dark"]{
+  --color-bg-grad:linear-gradient(135deg,#0B1026 0%,#1A0B2E 40%,#2D1B4E 70%,#0F1729 100%);
+  --color-bg-solid:#000;
+  --color-surface:rgba(28,28,30,0.72);
+  --color-surface-hover:rgba(44,44,46,0.86);
+  --color-surface-solid:#1C1C1E;
+  --color-accent:#0A84FF;--color-accent-hover:#409CFF;
+  --color-accent-secondary:#BF5AF2;
+  --color-text-primary:#F5F5F7;--color-text-secondary:#98989D;--color-text-tertiary:#6E6E73;
+  --color-success:#30D158;--color-danger:#FF453A;--color-warning:#FF9F0A;
+  --color-border:rgba(255,255,255,0.10);
+  --color-border-strong:rgba(255,255,255,0.18);
+  --color-divider:rgba(255,255,255,0.06);
+  --glass-tint-window:rgba(28,28,30,0.18);
+  --glass-tint-card:rgba(44,44,46,0.14);
+  --glass-tint-btn:rgba(72,72,74,0.22);
+  --glass-tint-sidebar:rgba(20,20,22,0.22);
+  --glass-highlight:rgba(255,255,255,0.06);
+  --glass-border:rgba(255,255,255,0.10);
+  --glass-brightness:0.92;
+  --shadow-sm:0 1px 2px rgba(0,0,0,0.40),0 1px 1px rgba(0,0,0,0.30);
+  --shadow-md:0 1px 2px rgba(0,0,0,0.40),0 8px 24px rgba(0,0,0,0.50);
+  --shadow-lg:0 1px 3px rgba(0,0,0,0.40),0 8px 24px rgba(0,0,0,0.50),0 20px 60px rgba(0,0,0,0.60);
+  --shadow-modal:0 1px 3px rgba(0,0,0,0.40),0 16px 40px rgba(0,0,0,0.50),0 40px 80px rgba(0,0,0,0.60);
+  --shadow-glass:0 8px 32px rgba(0,0,0,0.40),inset 0 1px 0 rgba(255,255,255,0.08),inset 0 -1px 0 rgba(0,0,0,0.30);
+  --shadow-focus:0 0 0 4px rgba(10,132,255,0.30);
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}
+}
+
+/* ===== Reset ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:var(--font-text);
+  font-size:var(--fs-body);
+  color:var(--color-text-primary);
+  background:var(--color-bg-solid);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-feature-settings:'cv02','cv11','ss01';
+  overflow:hidden;
+}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,textarea,select{font-family:inherit;color:inherit}
+a{color:var(--color-accent);text-decoration:none}
+
+/* ===== Scene Background (背景图 + 动态光斑叠加) ===== */
+.scene{
+  position:fixed;inset:0;z-index:-1;overflow:hidden;
+  background-color:var(--color-bg-solid);
+  background-image:var(--bg-image, var(--color-bg-grad));
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  transition:background-image var(--dur-page) var(--ease-standard);
+}
+.scene::before,.scene::after,.scene-orb{
+  content:"";position:absolute;width:520px;height:520px;
+  border-radius:50%;filter:blur(90px);opacity:0.28;
+  will-change:transform;
+}
+.scene::before{
+  background:radial-gradient(circle,#C7B6FF 0%,transparent 70%);
+  top:-100px;left:-100px;animation:drift1 22s ease-in-out infinite alternate;
+}
+.scene::after{
+  background:radial-gradient(circle,#FBC0E4 0%,transparent 70%);
+  bottom:-100px;right:-100px;animation:drift2 28s ease-in-out infinite alternate;
+}
+.scene-orb{
+  background:radial-gradient(circle,#A5D8FF 0%,transparent 70%);
+  top:40%;left:50%;animation:drift3 32s ease-in-out infinite alternate;
+}
+[data-theme="dark"] .scene::before{background:radial-gradient(circle,#7C3AED 0%,transparent 70%);opacity:0.25}
+[data-theme="dark"] .scene::after{background:radial-gradient(circle,#EC4899 0%,transparent 70%);opacity:0.18}
+[data-theme="dark"] .scene-orb{background:radial-gradient(circle,#3B82F6 0%,transparent 70%);opacity:0.20}
+@keyframes drift1{0%{transform:translate(0,0)}100%{transform:translate(120px,200px) scale(1.1)}}
+@keyframes drift2{0%{transform:translate(0,0)}100%{transform:translate(-180px,-120px) scale(0.9)}}
+@keyframes drift3{0%{transform:translate(-50%,-50%)}100%{transform:translate(-30%,-70%) scale(1.15)}}
+
+/* ===== Glass Classes ===== */
+.glass-window{
+  position:relative;background:var(--glass-tint-window);
+  -webkit-backdrop-filter:blur(18px) saturate(var(--glass-saturate)) brightness(var(--glass-brightness));
+  backdrop-filter:blur(18px) saturate(var(--glass-saturate)) brightness(var(--glass-brightness));
+  border:1px solid var(--glass-border);border-radius:var(--radius-window);
+  box-shadow:var(--shadow-glass),0 12px 32px rgba(0,0,0,0.04),0 32px 64px rgba(0,0,0,0.06);
+  isolation:isolate;will-change:backdrop-filter;
+  transition:box-shadow var(--dur-base) var(--ease-standard);
+}
+.glass-window::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--glass-highlight) 50%,transparent);
+  border-radius:inherit;pointer-events:none;
+}
+.glass-card{
+  position:relative;background:var(--glass-tint-card);
+  -webkit-backdrop-filter:blur(14px) saturate(var(--glass-saturate)) brightness(var(--glass-brightness));
+  backdrop-filter:blur(14px) saturate(var(--glass-saturate)) brightness(var(--glass-brightness));
+  border:1px solid var(--glass-border);border-radius:var(--radius-xl);
+  box-shadow:inset 0 1px 0 var(--glass-highlight),0 1px 2px rgba(0,0,0,0.02),0 8px 24px rgba(0,0,0,0.06);
+  isolation:isolate;
+  transition:transform var(--dur-base) var(--ease-standard),box-shadow var(--dur-base) var(--ease-standard),background var(--dur-base) ease;
+}
+.glass-card.hover-lift:hover{
+  background:var(--color-surface-hover);transform:translateY(-2px);
+  box-shadow:inset 0 1px 0 var(--glass-highlight),0 1px 2px rgba(0,0,0,0.05),0 12px 32px rgba(0,0,0,0.12),0 24px 48px rgba(0,0,0,0.10);
+}
+.glass-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  padding:8px 16px;min-height:28px;background:var(--glass-tint-btn);
+  -webkit-backdrop-filter:blur(16px) saturate(160%);
+  backdrop-filter:blur(16px) saturate(160%);
+  border:1px solid rgba(255,255,255,0.30);border-radius:var(--radius-btn);
+  color:var(--color-text-primary);font-size:var(--fs-body);font-weight:500;
+  box-shadow:var(--shadow-sm);
+  transition:all var(--dur-fast) var(--ease-standard);
+}
+[data-theme="dark"] .glass-btn{border-color:rgba(255,255,255,0.12)}
+.glass-btn:hover{background:var(--color-surface-hover);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.glass-btn:active{transform:scale(0.97);opacity:0.85}
+.glass-btn:focus-visible{outline:none;box-shadow:var(--shadow-focus)}
+.glass-btn.primary{background:var(--color-accent);color:#fff;border-color:transparent}
+.glass-btn.primary:hover{background:var(--color-accent-hover)}
+.glass-btn.danger{background:var(--color-danger);color:#fff;border-color:transparent}
+.glass-btn.danger:hover{filter:brightness(1.1)}
+.glass-btn[disabled]{opacity:0.4;cursor:not-allowed;transform:none}
+.glass-btn.large{padding:12px 24px;min-height:40px;font-size:var(--fs-body-lg);font-weight:600;border-radius:var(--radius-md)}
+.glass-sidebar{
+  background:var(--glass-tint-sidebar);
+  -webkit-backdrop-filter:blur(26px) saturate(var(--glass-saturate));
+  backdrop-filter:blur(26px) saturate(var(--glass-saturate));
+  border-right:1px solid var(--color-border);
+}
+@supports not (backdrop-filter:blur(10px)){
+  .glass-window,.glass-card,.glass-btn,.glass-sidebar{background:rgba(255,255,255,0.82)}
+  [data-theme="dark"] .glass-window,[data-theme="dark"] .glass-card,[data-theme="dark"] .glass-btn,[data-theme="dark"] .glass-sidebar{background:rgba(28,28,30,0.82)}
+}
+@media (max-width:480px){
+  .glass-window{backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%)}
+  .glass-card{backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%)}
+  .scene::before,.scene::after,.scene-orb{animation:none}
+  .bg-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ============================================================
+ * Liquid Glass — Apple WWDC25 风格液态玻璃 + 光标流光
+ * 用法: 给元素加 class="liquid"; JS 在 pointermove 时写入 --mx/--my
+ * ============================================================ */
+.liquid{
+  position:relative;overflow:hidden;isolation:isolate;
+  background:var(--glass-tint-card);
+  -webkit-backdrop-filter:blur(16px) saturate(200%) brightness(var(--glass-brightness));
+  backdrop-filter:blur(16px) saturate(200%) brightness(var(--glass-brightness));
+  border:1px solid var(--glass-border);
+  box-shadow:
+    0 8px 28px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.50),
+    inset 0 -1px 0 rgba(0,0,0,0.05);
+  transition:transform var(--dur-base) var(--ease-standard),
+             box-shadow var(--dur-base) var(--ease-standard),
+             border-color var(--dur-base) var(--ease-standard),
+             background var(--dur-base) ease;
+}
+/* 跟随光标的流光 (核心) */
+.liquid::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:inherit;
+  background:radial-gradient(200px circle at var(--mx,50%) var(--my,50%),
+    rgba(255,255,255,0.40),rgba(255,255,255,0.12) 38%,transparent 68%);
+  opacity:0;transition:opacity var(--dur-slow) var(--ease-standard);
+}
+.liquid:hover::before{opacity:1}
+/* 对角液态反光带 (流动感) */
+.liquid::after{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:inherit;
+  background:linear-gradient(125deg,rgba(255,255,255,0.22) 0%,transparent 28%,transparent 72%,rgba(255,255,255,0.10) 100%);
+  mix-blend-mode:screen;opacity:0.8;
+}
+.liquid > *{position:relative;z-index:1}
+.liquid:hover{
+  transform:translateY(-2px);border-color:rgba(255,255,255,0.38);
+  box-shadow:0 14px 40px rgba(0,0,0,0.18),inset 0 1px 0 rgba(255,255,255,0.60),inset 0 -1px 0 rgba(0,0,0,0.05);
+}
+.liquid:active{transform:translateY(0) scale(0.985);transition-duration:var(--dur-instant)}
+[data-theme="dark"] .liquid{box-shadow:0 8px 28px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.10),inset 0 -1px 0 rgba(0,0,0,0.30)}
+[data-theme="dark"] .liquid::before{background:radial-gradient(200px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,0.18),rgba(255,255,255,0.06) 38%,transparent 68%)}
+[data-theme="dark"] .liquid::after{background:linear-gradient(125deg,rgba(255,255,255,0.10) 0%,transparent 28%,transparent 72%,rgba(255,255,255,0.04) 100%)}
+@media (prefers-reduced-motion:reduce){
+  .liquid::before{display:none}.liquid:hover{transform:none}
+}
+
+/* ===== Mac Signature Components ===== */
+.traffic-light{display:flex;gap:8px;align-items:center;padding:0 12px;-webkit-app-region:no-drag}
+.tl-dot{
+  width:12px;height:12px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:transparent;font-size:9px;font-weight:700;line-height:1;
+  cursor:pointer;transition:color var(--dur-fast);
+  border:0.5px solid rgba(0,0,0,0.18);
+}
+.tl-dot.close{background:var(--color-tl-close)}
+.tl-dot.min{background:var(--color-tl-min)}
+.tl-dot.max{background:var(--color-tl-max)}
+.traffic-light:hover .tl-dot{color:rgba(0,0,0,0.65)}
+
+.glass-titlebar{
+  display:flex;align-items:center;height:var(--titlebar-h);
+  padding:0 16px;border-bottom:1px solid var(--color-divider);
+  position:sticky;top:0;z-index:var(--z-sticky);
+  background:var(--glass-tint-window);
+  -webkit-backdrop-filter:blur(22px) saturate(var(--glass-saturate));
+  backdrop-filter:blur(22px) saturate(var(--glass-saturate));
+}
+.tb-title{flex:1;text-align:center;font-size:var(--fs-h4);font-weight:600;letter-spacing:-0.005em}
+.tb-actions{display:flex;gap:8px;align-items:center}
+
+.segmented{
+  display:inline-flex;padding:2px;background:rgba(120,120,128,0.16);
+  border-radius:var(--radius-md);gap:2px;
+}
+.seg-btn{
+  padding:6px 14px;border-radius:6px;font-size:var(--fs-body);
+  color:var(--color-text-primary);transition:all var(--dur-fast);
+  font-weight:500;
+}
+.seg-btn.active{background:var(--color-surface-solid);box-shadow:var(--shadow-sm);font-weight:600}
+
+.pill-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:4px 10px;border-radius:var(--radius-pill);
+  background:rgba(0,122,255,0.12);color:var(--color-accent);
+  font-size:var(--fs-caption);font-weight:600;
+}
+
+.switch{position:relative;width:44px;height:26px;cursor:pointer;display:inline-block}
+.switch input{opacity:0;width:0;height:0;position:absolute}
+.switch-slider{
+  position:absolute;inset:0;background:rgba(120,120,128,0.32);
+  border-radius:var(--radius-pill);transition:background var(--dur-fast);
+}
+.switch-slider::before{
+  content:"";position:absolute;top:2px;left:2px;width:22px;height:22px;
+  background:#fff;border-radius:50%;box-shadow:0 2px 4px rgba(0,0,0,0.2);
+  transition:transform var(--dur-fast) var(--ease-standard);
+}
+.switch input:checked+.switch-slider{background:var(--color-success)}
+.switch input:checked+.switch-slider::before{transform:translateX(18px)}
+
+.slider{
+  -webkit-appearance:none;appearance:none;width:100%;height:4px;
+  background:rgba(120,120,128,0.32);border-radius:var(--radius-pill);outline:none;
+}
+.slider::-webkit-slider-thumb{
+  -webkit-appearance:none;width:20px;height:20px;border-radius:50%;
+  background:#fff;border:1px solid var(--color-border);cursor:pointer;
+  box-shadow:var(--shadow-md);transition:transform var(--dur-fast);
+}
+.slider::-webkit-slider-thumb:hover{transform:scale(1.1)}
+.slider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:1px solid var(--color-border);cursor:pointer;box-shadow:var(--shadow-md)}
+
+.progress-bar{height:4px;background:rgba(120,120,128,0.20);border-radius:var(--radius-pill);overflow:hidden}
+.progress-fill{height:100%;background:var(--color-accent);border-radius:inherit;transition:width var(--dur-page) var(--ease-out-quart)}
+
+/* ===== Layout ===== */
+.app{
+  position:fixed;inset:24px;border-radius:var(--radius-window);
+  display:flex;flex-direction:column;overflow:hidden;
+}
+/* 主窗口本身不模糊: 题目两侧露出清晰背景图, 只有内容卡片是毛玻璃 */
+/* 关键: isolation:auto + 无 backdrop-filter, 让子卡片的模糊能穿透到 .scene 背景图 */
+.app.glass-window{
+  background:transparent;
+  -webkit-backdrop-filter:none;backdrop-filter:none;
+  isolation:auto;will-change:auto;
+  box-shadow:0 20px 60px rgba(0,0,0,0.25);
+  border-color:rgba(255,255,255,0.15);
+}
+.app.glass-window::before{display:none}
+.app-body{flex:1;overflow:hidden;display:flex;flex-direction:column}
+.screen{flex:1;overflow-y:auto;padding:var(--space-7) var(--space-7) var(--space-9);scrollbar-gutter:stable}
+.screen::-webkit-scrollbar{width:10px}
+.screen::-webkit-scrollbar-thumb{background:rgba(120,120,128,0.32);border-radius:5px;border:2px solid transparent;background-clip:padding-box}
+.screen::-webkit-scrollbar-track{background:transparent}
+
+/* ===== Screens & Components ===== */
+.back-btn{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;color:var(--color-accent);font-weight:500}
+.back-btn:hover{opacity:0.75}
+
+.hero{padding:var(--space-7) 0 var(--space-8);text-align:center;max-width:var(--max-content);margin:0 auto}
+.hero h1{font-family:var(--font-serif);font-size:var(--fs-h1);font-weight:700;letter-spacing:-0.022em;line-height:1.15;margin-bottom:12px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.45)}
+.hero p{font-size:var(--fs-body-lg);color:rgba(255,255,255,0.92);text-shadow:0 1px 8px rgba(0,0,0,0.4)}
+/* 直接坐在清晰背景图上的文字: 加阴影保证可读 */
+.section-title,.back-btn,.wrong-count,.q-meta .pill-badge{text-shadow:0 1px 8px rgba(0,0,0,0.35)}
+.section-title{color:#fff}
+.back-btn{color:#fff!important}
+
+.resume-banner{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  margin:0 auto var(--space-6);max-width:var(--max-content);
+  padding:14px 20px;background:rgba(255,149,0,0.18);
+  border:1px solid rgba(255,255,255,0.30);border-radius:var(--radius-lg);
+  color:#fff;
+}
+.resume-banner .resume-banner-text{text-shadow:0 1px 6px rgba(0,0,0,0.4)}
+.resume-banner-text{display:flex;align-items:center;gap:10px;font-size:var(--fs-body);font-weight:500}
+.resume-banner-actions{display:flex;gap:8px}
+
+.entry-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:var(--max-content);margin:0 auto}
+.entry-card{
+  padding:28px;cursor:pointer;display:flex;flex-direction:column;gap:10px;
+  border-radius:var(--radius-xl);text-align:left;
+  font:inherit;color:inherit;width:100%;
+}
+.entry-card .ec-icon{font-size:28px;line-height:1}
+.entry-card h3{font-size:var(--fs-h3);font-weight:600;letter-spacing:-0.005em}
+.entry-card p{font-size:var(--fs-body);color:var(--color-text-secondary)}
+.entry-card .ec-meta{margin-top:auto;font-size:var(--fs-caption);color:var(--color-text-tertiary);font-weight:500}
+
+.section-title{font-size:var(--fs-h2);font-weight:600;letter-spacing:-0.015em;margin-bottom:var(--space-6)}
+.section-card{padding:24px;border-radius:var(--radius-xl)}
+.section-card+.section-card{margin-top:20px}
+.section-card h3{font-size:var(--fs-h3);font-weight:600;margin-bottom:16px}
+.field-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:16px}
+.field-label{font-size:var(--fs-body-lg);font-weight:500}
+.field-desc{font-size:var(--fs-caption);color:var(--color-text-secondary);margin-top:2px}
+
+.type-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+.type-choice{
+  display:flex;align-items:center;gap:12px;padding:14px 18px;
+  border-radius:var(--radius-lg);
+  background:var(--glass-tint-btn);cursor:pointer;
+}
+.type-choice:hover{border-color:rgba(255,255,255,0.45)}
+.type-choice.selected{border-color:var(--color-accent);background:rgba(0,122,255,0.14);box-shadow:0 0 0 3px rgba(0,122,255,0.18),inset 0 1px 0 rgba(255,255,255,0.5)}
+.type-choice input{position:absolute;opacity:0}
+.type-choice .tc-label{flex:1;font-size:var(--fs-body-lg);font-weight:500}
+.type-choice .tc-count{font-size:var(--fs-caption);color:var(--color-text-secondary);background:rgba(0,0,0,0.04);padding:2px 8px;border-radius:var(--radius-pill)}
+[data-theme="dark"] .type-choice .tc-count{background:rgba(255,255,255,0.08)}
+.type-choice.selected .tc-count{background:rgba(0,122,255,0.15);color:var(--color-accent)}
+
+.count-presets{display:flex;gap:10px;margin:14px 0 16px;flex-wrap:wrap}
+.count-preset{
+  flex:1;min-width:60px;padding:10px;text-align:center;
+  border-radius:var(--radius-md);
+  background:var(--glass-tint-btn);font-weight:600;cursor:pointer;color:var(--color-text-primary);
+}
+.count-preset.selected{border-color:var(--color-accent);background:rgba(0,122,255,0.16);color:var(--color-accent);box-shadow:0 0 0 3px rgba(0,122,255,0.18),inset 0 1px 0 rgba(255,255,255,0.5)}
+.count-value{text-align:center;font-size:var(--fs-h3);font-weight:700;margin-top:8px;color:var(--color-accent)}
+
+.preview-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:24px;padding:14px 20px;border-radius:var(--radius-lg);
+  background:rgba(0,122,255,0.08);
+}
+.preview-text{font-size:var(--fs-body-lg);font-weight:500}
+.preview-num{color:var(--color-accent);font-weight:700;font-size:var(--fs-h3)}
+
+/* ===== Quiz Screen ===== */
+.quiz-toolbar{
+  display:flex;align-items:center;gap:16px;padding:14px 0;
+  position:sticky;top:0;background:var(--glass-tint-window);
+  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+  z-index:var(--z-sticky);margin:0 calc(var(--space-7) * -1) 0;padding-left:var(--space-7);padding-right:var(--space-7);
+  border-bottom:1px solid var(--color-divider);
+}
+.quiz-progress-wrap{flex:1;display:flex;align-items:center;gap:12px}
+.quiz-progress{flex:1;height:4px}
+.quiz-counter{font-size:var(--fs-caption);font-weight:600;color:var(--color-text-secondary);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.quiz-main{max-width:var(--max-quiz);margin:0 auto;padding-top:var(--space-7)}
+.q-meta{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.q-stem-card{padding:28px 32px;margin-bottom:24px;background:rgba(255,255,255,0.55);-webkit-backdrop-filter:blur(24px) saturate(180%) brightness(1.05);backdrop-filter:blur(24px) saturate(180%) brightness(1.05)}
+[data-theme="dark"] .q-stem-card{background:rgba(30,30,32,0.58)}
+.q-stem{font-family:var(--font-serif);font-size:var(--fs-quiz-stem);font-weight:500;line-height:1.6;letter-spacing:-0.005em}
+
+.opt-list{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.opt-card{
+  display:flex;align-items:flex-start;gap:14px;padding:16px 20px;
+  border-radius:var(--radius-lg);
+  background:rgba(255,255,255,0.50);text-align:left;cursor:pointer;width:100%;
+  font-size:var(--fs-body-lg);line-height:1.55;color:var(--color-text-primary);
+}
+[data-theme="dark"] .opt-card{background:rgba(40,40,42,0.52)}
+.opt-card:hover:not(.locked){border-color:var(--color-accent);background:rgba(0,122,255,0.22)}
+.opt-card.selected{border-color:var(--color-accent);background:rgba(0,122,255,0.30);box-shadow:0 0 0 3px rgba(0,122,255,0.18),inset 0 1px 0 rgba(255,255,255,0.5)}
+.opt-card.correct{border-color:var(--color-success);background:rgba(52,199,89,0.38);color:var(--color-text-primary)}
+.opt-card.wrong{border-color:var(--color-danger);background:rgba(255,59,48,0.38)}
+.opt-card.locked{cursor:default}
+.opt-card.locked::before{display:none}
+.opt-letter{
+  width:28px;height:28px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(120,120,128,0.16);font-weight:700;font-size:var(--fs-body);font-family:var(--font-display);
+}
+.opt-card.selected .opt-letter{background:var(--color-accent);color:#fff}
+.opt-card.correct .opt-letter{background:var(--color-success);color:#fff}
+.opt-card.wrong .opt-letter{background:var(--color-danger);color:#fff}
+.opt-body{flex:1}
+
+.judge-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.judge-btn{
+  padding:32px;border-radius:var(--radius-xl);font-size:28px;font-weight:700;
+  background:var(--glass-tint-btn);
+  cursor:pointer;
+}
+.judge-btn:hover:not(.locked){transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.judge-btn.y{color:var(--color-success)}
+.judge-btn.n{color:var(--color-danger)}
+.judge-btn.selected.y{background:rgba(52,199,89,0.15);border-color:var(--color-success)}
+.judge-btn.selected.n{background:rgba(255,59,48,0.15);border-color:var(--color-danger)}
+.judge-btn.correct{background:rgba(52,199,89,0.18);border-color:var(--color-success);box-shadow:0 0 0 4px rgba(52,199,89,0.15)}
+.judge-btn.wrong{background:rgba(255,59,48,0.18);border-color:var(--color-danger)}
+.judge-btn.locked{cursor:default}
+
+.essay-area{
+  width:100%;min-height:160px;padding:16px;border-radius:var(--radius-lg);
+  border:1.5px solid var(--color-border);background:var(--color-surface);
+  font-size:var(--fs-body-lg);line-height:1.7;resize:vertical;
+  font-family:var(--font-text);
+}
+.essay-area:focus{outline:none;border-color:var(--color-accent);box-shadow:var(--shadow-focus)}
+.essay-ref{
+  position:relative;isolation:isolate;
+  margin-top:16px;padding:24px 28px;border-radius:var(--radius-xl);
+  background:rgba(255,255,255,0.62);
+  -webkit-backdrop-filter:blur(24px) saturate(180%) brightness(1.05);
+  backdrop-filter:blur(24px) saturate(180%) brightness(1.05);
+  border:1px solid var(--glass-border);
+  box-shadow:0 8px 28px rgba(0,0,0,0.12),inset 0 1px 0 rgba(255,255,255,0.5);
+  font-size:var(--fs-body-lg);line-height:1.85;white-space:pre-wrap;
+  max-height:420px;overflow-y:auto;color:var(--color-text-primary);
+}
+[data-theme="dark"] .essay-ref{background:rgba(30,30,32,0.66);color:#F5F5F7;border-color:rgba(255,255,255,0.10)}
+.essay-ref h4{font-size:var(--fs-caption);color:var(--color-accent);font-weight:700;margin-bottom:10px;letter-spacing:0.05em;text-transform:uppercase}
+.essay-self-judge{display:flex;gap:12px;margin-top:16px;justify-content:center}
+
+.feedback-card{
+  padding:20px 24px;border-radius:var(--radius-lg);
+  animation:slideUp var(--dur-base) var(--ease-out-quart);
+  margin-bottom:20px;
+}
+.feedback-card.correct{background:rgba(52,199,89,0.12);border:1px solid rgba(52,199,89,0.30)}
+.feedback-card.wrong{background:rgba(255,59,48,0.12);border:1px solid rgba(255,59,48,0.30)}
+.fb-title{font-size:var(--fs-h3);font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.feedback-card.correct .fb-title{color:var(--color-success)}
+.feedback-card.wrong .fb-title{color:var(--color-danger)}
+.fb-body{font-size:var(--fs-body);line-height:1.6;color:var(--color-text-secondary)}
+.fb-body strong{color:var(--color-text-primary)}
+@keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.quiz-actions{display:flex;justify-content:space-between;gap:12px;margin-top:24px}
+
+/* ===== Result ===== */
+.result-main{max-width:var(--max-quiz);margin:var(--space-9) auto 0;text-align:center}
+.result-title{font-family:var(--font-serif);font-size:var(--fs-h1);font-weight:700;margin-bottom:var(--space-7)}
+.stat-circles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:var(--space-7)}
+.stat-circle{padding:24px 16px;text-align:center;border-radius:var(--radius-xl)}
+.stat-num{font-family:var(--font-display);font-size:48px;font-weight:700;line-height:1;letter-spacing:-0.03em;color:var(--color-accent)}
+.stat-label{font-size:var(--fs-caption);font-weight:600;color:var(--color-text-secondary);margin-top:8px;text-transform:uppercase;letter-spacing:0.05em}
+.per-type-bars{padding:20px 24px;border-radius:var(--radius-xl);margin-bottom:var(--space-7)}
+.pt-row{display:flex;align-items:center;gap:12px;padding:10px 0}
+.pt-label{min-width:64px;font-size:var(--fs-body);font-weight:500;text-align:left}
+.pt-track{flex:1;height:8px;background:rgba(120,120,128,0.16);border-radius:var(--radius-pill);overflow:hidden}
+.pt-fill{height:100%;background:var(--color-accent);border-radius:inherit;transition:width var(--dur-page) var(--ease-out-quart)}
+.pt-num{min-width:60px;text-align:right;font-size:var(--fs-body);font-weight:600;color:var(--color-text-secondary);font-variant-numeric:tabular-nums}
+
+/* ===== Wrong Questions ===== */
+.wrong-layout{display:grid;grid-template-columns:var(--sidebar-w) 1fr;gap:24px;max-width:var(--max-content);margin:0 auto}
+.wrong-sidebar{padding:20px;border-radius:var(--radius-xl);align-self:start;position:sticky;top:0;background:var(--glass-tint-sidebar);-webkit-backdrop-filter:blur(26px) saturate(180%);backdrop-filter:blur(26px) saturate(180%);border:1px solid var(--color-border)}
+.wrong-sidebar h4{font-size:var(--fs-caption);color:var(--color-text-secondary);font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.05em}
+.ws-item{
+  display:flex;align-items:center;justify-content:space-between;padding:10px 14px;
+  border-radius:var(--radius-md);cursor:pointer;font-size:var(--fs-body);font-weight:500;
+  transition:background var(--dur-fast);margin-bottom:2px;
+}
+.ws-item:hover{background:rgba(0,0,0,0.04)}
+[data-theme="dark"] .ws-item:hover{background:rgba(255,255,255,0.06)}
+.ws-item.active{background:var(--color-accent);color:#fff}
+.ws-item.active .ws-count{background:rgba(255,255,255,0.25);color:#fff}
+.ws-count{font-size:var(--fs-caption);background:rgba(0,0,0,0.06);padding:2px 8px;border-radius:var(--radius-pill);font-weight:600}
+[data-theme="dark"] .ws-count{background:rgba(255,255,255,0.10)}
+
+.wrong-main{display:flex;flex-direction:column;gap:14px}
+.wrong-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;gap:12px;flex-wrap:wrap}
+.wrong-count{font-size:var(--fs-h3);font-weight:600}
+.wrong-actions{display:flex;gap:8px;flex-wrap:wrap}
+.wq-item{
+  padding:18px 20px;border-radius:var(--radius-lg);cursor:pointer;
+  display:flex;align-items:flex-start;gap:14px;
+}
+.wq-body{flex:1;min-width:0}
+.wq-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.wq-stem{font-size:var(--fs-body-lg);line-height:1.5;color:var(--color-text-primary);font-weight:500;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.wq-meta{margin-top:8px;font-size:var(--fs-caption);color:var(--color-text-tertiary);display:flex;gap:14px}
+
+.empty-state{text-align:center;padding:80px 20px;color:var(--color-text-secondary)}
+.empty-icon{font-size:64px;margin-bottom:16px;opacity:0.4}
+.empty-title{font-size:var(--fs-h3);font-weight:600;color:var(--color-text-primary);margin-bottom:8px}
+
+/* ===== Stats ===== */
+.stats-main{max-width:var(--max-content);margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kpi-card{padding:20px;border-radius:var(--radius-xl);text-align:left}
+.kpi-label{font-size:var(--fs-caption);color:var(--color-text-secondary);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px}
+.kpi-num{font-family:var(--font-display);font-size:36px;font-weight:700;letter-spacing:-0.025em;line-height:1}
+.kpi-num.accent{color:var(--color-accent)}
+.kpi-num.warn{color:var(--color-warning)}
+.kpi-num.danger{color:var(--color-danger)}
+
+.charts-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.chart-card{padding:24px;border-radius:var(--radius-xl);min-height:300px}
+.chart-card h3{font-size:var(--fs-h3);font-weight:600;margin-bottom:16px}
+.pie-wrap{display:flex;align-items:center;gap:24px;justify-content:center;padding:16px 0}
+.pie-svg{width:160px;height:160px}
+.pie-legend{display:flex;flex-direction:column;gap:8px}
+.legend-item{display:flex;align-items:center;gap:8px;font-size:var(--fs-body);font-weight:500}
+.legend-dot{width:10px;height:10px;border-radius:50%}
+.line-chart-wrap{padding:8px}
+.empty-chart{text-align:center;padding:40px 0;color:var(--color-text-tertiary);font-size:var(--fs-body)}
+
+/* ===== Modal & Toast ===== */
+.modal-backdrop{
+  position:fixed;inset:0;background:rgba(0,0,0,0.45);
+  display:flex;align-items:center;justify-content:center;
+  z-index:var(--z-modal);padding:24px;
+  animation:fadeIn var(--dur-modal) var(--ease-standard);
+}
+.modal-card{
+  max-width:440px;width:100%;padding:28px;border-radius:var(--radius-xl);
+  animation:modalIn var(--dur-modal) var(--ease-spring);
+}
+.modal-card h3{font-size:var(--fs-h3);font-weight:600;margin-bottom:12px}
+.modal-card p{color:var(--color-text-secondary);font-size:var(--fs-body-lg);line-height:1.55;margin-bottom:24px}
+.modal-actions{display:flex;justify-content:flex-end;gap:10px}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes modalIn{from{opacity:0;transform:scale(0.95) translateY(20px)}to{opacity:1;transform:none}}
+
+.toast-wrap{position:fixed;top:24px;left:50%;transform:translateX(-50%);z-index:var(--z-toast);display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.toast{
+  padding:12px 20px;border-radius:var(--radius-lg);
+  background:var(--glass-tint-window);
+  -webkit-backdrop-filter:blur(30px) saturate(180%);
+  backdrop-filter:blur(30px) saturate(180%);
+  border:1px solid var(--glass-border);
+  box-shadow:var(--shadow-lg);
+  font-size:var(--fs-body);font-weight:500;
+  animation:toastIn var(--dur-base) var(--ease-spring);
+  pointer-events:auto;max-width:380px;
+}
+.toast.success{border-left:3px solid var(--color-success)}
+.toast.error{border-left:3px solid var(--color-danger)}
+.toast.warn{border-left:3px solid var(--color-warning)}
+@keyframes toastIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+
+/* ===== Responsive ===== */
+@media (max-width:768px){
+  .app{inset:0;border-radius:0}
+  .screen{padding:var(--space-5)}
+  .entry-grid{grid-template-columns:1fr}
+  .charts-row{grid-template-columns:1fr}
+  .wrong-layout{grid-template-columns:1fr}
+  .wrong-sidebar{position:static}
+  .stat-circles{grid-template-columns:1fr}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .judge-pair{grid-template-columns:1fr}
+}
+
+/* ===== Background Picker ===== */
+.bg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.bg-thumb{
+  aspect-ratio:16/10;border-radius:var(--radius-lg);border:2px solid var(--color-border);
+  background-size:cover;background-position:center;cursor:pointer;
+  transition:all var(--dur-fast) var(--ease-standard);overflow:hidden;
+}
+.bg-thumb:hover{border-color:var(--color-accent);transform:scale(1.03);box-shadow:var(--shadow-md)}
+.bg-thumb.active{border-color:var(--color-accent);box-shadow:var(--shadow-focus);position:relative}
+.bg-thumb.active::after{
+  content:"✓";position:absolute;top:6px;right:8px;color:#fff;background:var(--color-accent);
+  width:20px;height:20px;border-radius:50%;font-size:12px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;line-height:1;
+}
+
+/* ===== Utility ===== */
+.row{display:flex;align-items:center;gap:12px}
+.row-between{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.col{display:flex;flex-direction:column;gap:8px}
+.mt-2{margin-top:8px}.mt-4{margin-top:16px}.mt-6{margin-top:24px}
+.text-secondary{color:var(--color-text-secondary)}
+.hidden{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+.option-num{display:inline-block;width:20px;height:20px;border-radius:4px;text-align:center;line-height:20px;background:rgba(120,120,128,0.16);font-size:var(--fs-footnote);font-weight:600;margin-right:6px;font-family:var(--font-display)}
+</style>
+</head>
+<body>
+<div class="scene"><div class="scene-orb"></div></div>
+<div id="app" class="app glass-window">
+  <div class="glass-titlebar">
+    <div class="traffic-light">
+      <button class="tl-dot close" data-action="close" title="关闭">×</button>
+      <button class="tl-dot min" data-action="min" title="最小化">−</button>
+      <button class="tl-dot max" data-action="max" title="最大化">+</button>
+    </div>
+    <div class="tb-title">思政刷题 · 报告委员长</div>
+    <div class="tb-actions">
+      <button class="glass-btn" id="btn-theme" title="切换主题">☀</button>
+    </div>
+  </div>
+  <div class="app-body" id="app-body"></div>
+</div>
+
+<!-- ========== Templates ========== -->
+<template id="tpl-home">
+  <section class="screen">
+    <div id="resume-slot"></div>
+    <div class="hero">
+      <h1>报告委员长</h1>
+      <p>今日学习目标 · 思政题库 230 题任你刷</p>
+    </div>
+    <div class="entry-grid">
+      <button class="entry-card liquid" data-go="#/quiz-setup">
+        <span class="ec-icon">📝</span>
+        <h3>开始刷题</h3>
+        <p>自定义题型、题数、模式</p>
+        <span class="ec-meta">单选 125 · 多选 50 · 判断 50 · 简答 5</span>
+      </button>
+      <button class="entry-card liquid" data-go="#/wrong">
+        <span class="ec-icon">📌</span>
+        <h3>我的错题集</h3>
+        <p>复盘错题，巩固薄弱知识点</p>
+        <span class="ec-meta" id="home-wrong-meta">共 0 题待复习</span>
+      </button>
+      <button class="entry-card liquid" data-go="#/stats">
+        <span class="ec-icon">📊</span>
+        <h3>学习统计</h3>
+        <p>正确率、错题率、按题型分布</p>
+        <span class="ec-meta" id="home-stats-meta">未开始</span>
+      </button>
+      <button class="entry-card liquid" data-go="#/settings">
+        <span class="ec-icon">⚙</span>
+        <h3>设置</h3>
+        <p>主题、字号、数据导入导出</p>
+        <span class="ec-meta">本地存储 · 零依赖</span>
+      </button>
+    </div>
+  </section>
+</template>
+
+<template id="tpl-quiz-setup">
+  <section class="screen">
+    <button class="back-btn" data-go="#/home">‹ 返回首页</button>
+    <h2 class="section-title mt-4">配置刷题模式</h2>
+    <div style="max-width:var(--max-setup);margin:0 auto">
+      <div class="section-card glass-card">
+        <h3>① 选择题型</h3>
+        <div class="type-grid" id="type-grid"></div>
+      </div>
+      <div class="section-card glass-card">
+        <h3>② 题目数量</h3>
+        <div class="count-presets" id="count-presets">
+          <button class="count-preset liquid" data-count="10">10</button>
+          <button class="count-preset liquid" data-count="20">20</button>
+          <button class="count-preset liquid" data-count="50">50</button>
+          <button class="count-preset liquid" data-count="0">全部</button>
+        </div>
+        <input type="range" class="slider" id="count-slider" min="5" max="230" step="1" value="20">
+        <div class="count-value"><span id="count-value">20</span> 题</div>
+      </div>
+      <div class="section-card glass-card">
+        <h3>③ 出题顺序</h3>
+        <div class="segmented" id="order-seg">
+          <button class="seg-btn liquid active" data-order="sequence">顺序</button>
+          <button class="seg-btn liquid" data-order="random">随机</button>
+        </div>
+      </div>
+      <div class="section-card glass-card">
+        <h3>④ 过滤选项</h3>
+        <div class="field-row">
+          <div><div class="field-label">仅练习错题</div><div class="field-desc">从错题集中抽取</div></div>
+          <label class="switch"><input type="checkbox" id="only-wrong"><span class="switch-slider"></span></label>
+        </div>
+        <div class="field-row">
+          <div><div class="field-label">跳过已正确</div><div class="field-desc">本会话内答对不再出现</div></div>
+          <label class="switch"><input type="checkbox" id="skip-correct" checked><span class="switch-slider"></span></label>
+        </div>
+      </div>
+      <div class="preview-bar glass-card">
+        <span class="preview-text">本次将抽取 <span class="preview-num" id="preview-num">20</span> 题</span>
+        <button class="glass-btn primary large" id="btn-start-quiz">开始刷题 →</button>
+      </div>
+    </div>
+  </section>
+</template>
+
+<template id="tpl-quiz">
+  <section class="screen">
+    <div class="quiz-toolbar">
+      <button class="back-btn" id="btn-quiz-exit">‹ 退出</button>
+      <div class="quiz-progress-wrap">
+        <div class="progress-bar quiz-progress"><div class="progress-fill" id="q-progress"></div></div>
+      </div>
+      <div class="quiz-counter" id="q-counter">1 / 1</div>
+    </div>
+    <div class="quiz-main" id="quiz-main"></div>
+  </section>
+</template>
+
+<template id="tpl-wrong">
+  <section class="screen">
+    <button class="back-btn" data-go="#/home">‹ 返回首页</button>
+    <div class="wrong-toolbar mt-4">
+      <h2 class="wrong-count" id="wrong-count">我的错题集 (0 题)</h2>
+      <div class="wrong-actions">
+        <button class="glass-btn" id="btn-wrong-repractice">错题重练 →</button>
+        <button class="glass-btn danger" id="btn-wrong-clear">全部清空</button>
+      </div>
+    </div>
+    <div class="wrong-layout mt-4">
+      <aside class="wrong-sidebar" id="wrong-sidebar"></aside>
+      <div class="wrong-main" id="wrong-list"></div>
+    </div>
+  </section>
+</template>
+
+<template id="tpl-stats">
+  <section class="screen">
+    <button class="back-btn" data-go="#/home">‹ 返回首页</button>
+    <h2 class="section-title mt-4">学习统计</h2>
+    <div class="stats-main" id="stats-main"></div>
+  </section>
+</template>
+
+<template id="tpl-settings">
+  <section class="screen">
+    <button class="back-btn" data-go="#/home">‹ 返回首页</button>
+    <h2 class="section-title mt-4">设置</h2>
+    <div style="max-width:var(--max-setup);margin:0 auto">
+      <div class="section-card glass-card">
+        <h3>外观</h3>
+        <div class="field-row">
+          <div><div class="field-label">主题</div><div class="field-desc">浅色、深色或跟随系统</div></div>
+          <div class="segmented" id="theme-seg">
+            <button class="seg-btn liquid" data-theme="light">浅色</button>
+            <button class="seg-btn liquid" data-theme="dark">深色</button>
+            <button class="seg-btn liquid" data-theme="auto">跟随</button>
+          </div>
+        </div>
+        <div class="field-row">
+          <div><div class="field-label">题干字号 (<span id="fs-val">22</span>px)</div><div class="field-desc">调整刷题界面正文大小</div></div>
+          <input type="range" class="slider" id="fs-slider" min="16" max="26" step="1" value="22" style="max-width:200px">
+        </div>
+      </div>
+      <div class="section-card glass-card">
+        <h3>背景图片</h3>
+        <div class="field-desc" style="margin-bottom:12px">选择背景壁纸（毛玻璃穿透显示）</div>
+        <div class="bg-grid" id="bg-grid">
+          <button class="bg-thumb" data-bg="1" style="background-image:url('backgrounds/bg-1.jpg')" title="天安门·道路是曲折的"></button>
+          <button class="bg-thumb" data-bg="2" style="background-image:url('backgrounds/bg-2.jpg')" title="国徽"></button>
+          <button class="bg-thumb" data-bg="3" style="background-image:url('backgrounds/bg-3.jpg')" title="五星红旗"></button>
+          <button class="bg-thumb" data-bg="4" style="background-image:url('backgrounds/bg-4.jpg')" title="天安门升旗·黄昏"></button>
+        </div>
+      </div>
+      <div class="section-card glass-card">
+        <h3>数据</h3>
+        <div class="field-row">
+          <div><div class="field-label">导出数据</div><div class="field-desc">下载错题集、统计、设置为 JSON 文件</div></div>
+          <button class="glass-btn" id="btn-export">导出 JSON</button>
+        </div>
+        <div class="field-row">
+          <div><div class="field-label">导入数据</div><div class="field-desc">从备份 JSON 恢复</div></div>
+          <button class="glass-btn" id="btn-import">选择文件</button>
+          <input type="file" id="import-file" accept=".json" hidden>
+        </div>
+        <div class="field-row">
+          <div><div class="field-label" style="color:var(--color-danger)">清空所有数据</div><div class="field-desc">删除错题集、统计与进度（不可恢复）</div></div>
+          <button class="glass-btn danger" id="btn-clear-data">清空</button>
+        </div>
+      </div>
+      <div class="section-card glass-card">
+        <h3>关于</h3>
+        <p class="text-secondary" style="font-size:var(--fs-body-lg);line-height:1.6">
+          思政刷题 · 报告委员长 v1.0<br>
+          题库共 230 题（单选 125 / 多选 50 / 判断 50 / 简答 5）<br>
+          纯前端单文件应用，数据仅保存在你本机的 localStorage。<br>
+          推荐浏览器：Chrome / Safari / Firefox / Edge 最新版。
+        </p>
+      </div>
+    </div>
+  </section>
+</template>
+
+<template id="tpl-result">
+  <section class="screen">
+    <div class="result-main">
+      <h1 class="result-title">本次成绩单</h1>
+      <div class="stat-circles">
+        <div class="stat-circle glass-card"><div class="stat-num" id="res-rate">0%</div><div class="stat-label">正确率</div></div>
+        <div class="stat-circle glass-card"><div class="stat-num" style="color:var(--color-success)" id="res-right">0</div><div class="stat-label">答对</div></div>
+        <div class="stat-circle glass-card"><div class="stat-num" style="color:var(--color-danger)" id="res-wrong">0</div><div class="stat-label">答错</div></div>
+      </div>
+      <div class="per-type-bars glass-card" id="res-pertype"></div>
+      <div class="row" style="justify-content:center;gap:12px;margin-top:8px">
+        <button class="glass-btn" data-go="#/wrong">查看错题</button>
+        <button class="glass-btn primary large" id="btn-retry">再刷一次</button>
+        <button class="glass-btn" data-go="#/home">回首页</button>
+      </div>
+    </div>
+  </section>
+</template>
+
+<!-- 题库数据占位 -->
+<script id="qbank-data" type="application/json">{"single":[{"id":"s1","type":"single","question":"社会主义核心价值观是社会主义核心价值体系的（   ）。","options":{"A":"本质要求","B":"精神内核","C":"价值引领","D":"基本特征"},"answer":"B"},{"id":"s2","type":"single","question":"社会主义核心价值观与社会主义核心价值体系都体现了社会主义意识形态的（    ）。","options":{"A":"本质要求","B":"精神内核","C":"根本性质","D":"基本特征"},"answer":"A"},{"id":"s3","type":"single","question":"社会主义核心价值观，国家层面的价值追求是（   ）。","options":{"A":"富强、民主、文明、和谐","B":"自由、平等、公正、法治","C":"爱国、敬业、诚信、友善","D":"富强、民主、爱国、法治"},"answer":"A"},{"id":"s4","type":"single","question":"社会主义核心价值观，社会层面的价值取向是（   ）。","options":{"A":"富强、民主、文明、和谐","B":"自由、平等、公正、法治","C":"爱国、敬业、诚信、友善","D":"富强、民主、爱国、法治"},"answer":"B"},{"id":"s5","type":"single","question":"社会主义核心价值观，个人层面的价值准则是（   ）。","options":{"A":"富强、民主、文明、和谐","B":"自由、平等、公正、法治","C":"爱国、敬业、诚信、友善","D":"富强、民主、爱国、法治"},"answer":"C"},{"id":"s6","type":"single","question":"习近平总书记指出：“人类社会发展的历史表明，对一个民族、一个国家来说，最持久、最深层的力量是全社会共同认可的（   ）。","options":{"A":"价值准则","B":"价值体系","C":"核心价值观","D":"优秀文化"},"answer":"C"},{"id":"s7","type":"single","question":"2018年3月，十三届全国人大一次会议通过宪法修正案，把国家（   ）正式写入了宪法。","options":{"A":"倡导社会主义核心价值观","B":"倡导社会主义核心价值体系","C":"坚定中国特色社会主义文化自信","D":"弘扬中国特色社会主义先进文化"},"answer":"A"},{"id":"s8","type":"single","question":"当今世界，文化越来越成为综合国力竞争的重要因素，文化软实力的竞争，本质上是（   ）的竞争。","options":{"A":"传统文化","B":"核心价值观","C":"文化创新","D":"先进文化"},"answer":"B"},{"id":"s9","type":"single","question":"培育和践行社会主义核心价值观，是坚持和发展中国特色社会主义的（   ）。","options":{"A":"道义力量","B":"历史底蕴","C":"价值遵循","D":"文化力量"},"answer":"C"},{"id":"s10","type":"single","question":"培育和践行社会主义核心价值观，能够在具体利益矛盾、各种思想差异上最广泛地形成（   ），有效整合纷繁复杂的社会思想意识，形成团结奋斗的强大精神力量。","options":{"A":"行动指南","B":"价值共识","C":"统一思想","D":"精神指引"},"answer":"B"},{"id":"s11","type":"single","question":"一个国家和民族赖以为系的精神纽带是（   ）。","options":{"A":"坚定的理论自信","B":"共同的价值目标","C":"强大的经济支撑","D":"和谐的社会环境"},"answer":"B"},{"id":"s12","type":"single","question":"（   ）是涵养社会主义核心价值观的重要源泉，是中华民族的精神命脉。","options":{"A":"革命道德","B":"传统文化","C":"社会主义核心价值体系","D":"中华优秀传统文化"},"answer":"D"},{"id":"s13","type":"single","question":"中国特色社会主义建设是社会主义核心价值观的（   ）。","options":{"A":"实践根据","B":"价值源泉","C":"道义理论","D":"历史底蕴"},"answer":"A"},{"id":"s14","type":"single","question":"坚定的（   ），是中国特色社会主义道路自信、理论自信、制度自信和文化自信的价值内核，其本质就是建立在五千多年中华文明传承基础上的文化自信。","options":{"A":"价值自信","B":"文化自信","C":"价值观自信","D":"核心价值观自信"},"answer":"D"},{"id":"s15","type":"single","question":"（   ）是社会主义核心价值观自信的历史底蕴。","options":{"A":"中国建设","B":"中华优秀传统文化","C":"中国历史","D":"道义力量"},"answer":"B"},{"id":"s16","type":"single","question":"培育和践行社会主义核心价值观的努力，正以多姿多彩的形式展现出来。这种坚定不移朝着目标前进的精神状态，就是一个民族、一个国家高度（   ）的状态。","options":{"A":"坚持不懈","B":"持之以恒","C":"自觉自信","D":"渐进向前"},"answer":"C"},{"id":"s17","type":"single","question":"社会主义核心价值观以其先进性、人民性和真实性而居于人类社会的价值制高点，具有强大的（   ）。","options":{"A":"历史底蕴","B":"现实基础","C":"道义力量","D":"精神指引"},"answer":"C"},{"id":"s18","type":"single","question":"社会主义核心价值观的（   ），体现在它是社会主义制度所坚持和追求的核心价值理念。","options":{"A":"先进性","B":"人民性","C":"真实性","D":"实践性"},"answer":"A"},{"id":"s19","type":"single","question":"社会主义核心价值观的（   ），体现在它所代表的最广大人民的根本利益，反映的最广大人民的价值诉求。","options":{"A":"先进性","B":"人民性","C":"真实性","D":"实践性"},"answer":"B"},{"id":"s20","type":"single","question":"（   ），则为社会主义核心价值观的真正实现奠定了根本的制度前提和制度保障，使得自由、民主、公正等价值观”不是装饰品，不是用来做摆设的，而是要用来解决人民要解决的问题的”，成为真切、具体、广泛的现实。","options":{"A":"社会主义公有制","B":"人民当家做主的社会主义制度","C":"中国共产党领导的多党合作和政治协商制度","D":"民族区域自治制度"},"answer":"B"},{"id":"s21","type":"single","question":"（   ）是以马克思主义为理论基础、以社会主义运动为实践根据的社会主义核心价值观的根本特性。","options":{"A":"先进性","B":"真实性","C":"人民性","D":"道义性"},"answer":"C"},{"id":"s22","type":"single","question":"（   ）是树立社会主义核心价值观的重要基础。","options":{"A":"德行","B":"知识","C":"实践","D":"思辨"},"answer":"B"},{"id":"s23","type":"single","question":"道德是以（   ）为评价方式，主要依靠社会舆论、传统习俗和内心信念来发挥作业的行为规范的总和。","options":{"A":"是非","B":"美丑","C":"善恶","D":"对错"},"answer":"C"},{"id":"s24","type":"single","question":"（   ）观点将道德起源归结于上天的命令和神的旨意，试图以人之外的某种所谓客观意志来说明道德的起源。","options":{"A":"先天人性论","B":"情感欲望论","C":"动物本能论","D":"天意神启论"},"answer":"D"},{"id":"s25","type":"single","question":"（   ）是道德起源的首要前提。","options":{"A":"劳动","B":"人的自我意识","C":"理论","D":"精神"},"answer":"A"},{"id":"s26","type":"single","question":"劳动是道德起源的（   ）。","options":{"A":"基本条件","B":"重要条件","C":"首要前提","D":"根本条件"},"answer":"C"},{"id":"s27","type":"single","question":"（   ）是道德赖以产生的客观条件。","options":{"A":"劳动","B":"社会关系","C":"人的自我意识","D":"精神"},"answer":"B"},{"id":"s28","type":"single","question":"社会关系是道德赖以产生的（   ）。","options":{"A":"首要前提","B":"客观条件","C":"主观条件","D":"根本条件"},"answer":"B"},{"id":"s29","type":"single","question":"（   ）是道德产生的主观条件。","options":{"A":"劳动","B":"社会关系","C":"人的自我意识","D":"精神"},"answer":"C"},{"id":"s30","type":"single","question":"人的自我意识是道德产生的（   ）。","options":{"A":"首要前提","B":"客观条件","C":"主观条件","D":"根本条件"},"answer":"C"},{"id":"s31","type":"single","question":"道德的产生、发展和变化，归根到底根源于（   ）。","options":{"A":"社会政治关系","B":"社会经济关系","C":"社会文化关系","D":"人与人之间的关系"},"answer":"B"},{"id":"s32","type":"single","question":"道德作为一种社会意识，在阶级社会里总是反映着一定阶级的利益，因而不可避免地具有（   ）。","options":{"A":"阶层性","B":"阶级性","C":"人民性","D":"实践性"},"answer":"B"},{"id":"s33","type":"single","question":"道德是社会利益关系的（   ）","options":{"A":"特殊调节方式","B":"一般调节方式","C":"表现形式","D":"规范方式"},"answer":"A"},{"id":"s34","type":"single","question":"作为（   ），道德是一种旨在通过把握世界的善恶现象而规范人们的行为并通过人们的实践活动体现出来的社会意识。","options":{"A":"实践活动","B":"实践精神","C":"文化意识","D":"规范方式"},"answer":"B"},{"id":"s35","type":"single","question":"道德的（   ）是指道德反映社会关系特别是反映社会经济关系的功效与能力。","options":{"A":"认识功能","B":"调节功能","C":"规范功能","D":"激励功能"},"answer":"A"},{"id":"s36","type":"single","question":"道德的（   ）是指在正确善恶观的指引下，规范社会成员在社会公共领域、职业领域、家庭领域的行为，并规范个人品德的养成，引导并促进人们崇德向善。","options":{"A":"认识功能","B":"调节功能","C":"规范功能","D":"激励功能"},"answer":"C"},{"id":"s37","type":"single","question":"道德的（   ）是指道德通过评价等方式，指导和纠正人们的行为和实践活动，协调社会关系和人际关系的功效与能力。","options":{"A":"认识功能","B":"调节功能","C":"规范功能","D":"激励功能"},"answer":"B"},{"id":"s38","type":"single","question":"在人类思想史上，（   ）第一次科学而全面地论述了道德的起源问题，为正确认识和理解道德的本质奠定了基础。","options":{"A":"马克思主义道德理论","B":"天意神启论","C":"情感欲望论","D":"先天人性论"},"answer":"A"},{"id":"s39","type":"single","question":"（   ）内容丰富、博大精深，是人类文明发展的重要精神财富，是社会主义道德建设的源头活水。","options":{"A":"中华文化","B":"传统道德","C":"革命道德","D":"中华传统美德"},"answer":"D"},{"id":"s40","type":"single","question":"中华传统美德主张在物质生活基本满足的情况下应追求崇高的精神境界，把（   ）的实现看作是人生诸种需要中最高层次的需要。","options":{"A":"道德理想","B":"政治理想","C":"生活理想","D":"职业理想"},"answer":"A"},{"id":"s41","type":"single","question":"在人类历史上，原始社会的经济关系产生了原始的道德、封建社会的经济关系产生了封建社会道德，社会主义社会的经济关系产生了社会主义道德，这说明（   ）。","options":{"A":"社会道德对社会经济关系具有决定作用","B":"有什么样的社会经济关系就有什么样的社会道德","C":"社会经济关系的性质并不决定社会道德体系的性质","D":"社会道德的发展变化必然引起社会经济关系的发展变化"},"answer":"B"},{"id":"s42","type":"single","question":"中国革命道德萌芽于（   ）。","options":{"A":"五四运动前后","B":"中共一大前后","C":"南昌起义前后","D":"秋收起义前后"},"answer":"A"},{"id":"s43","type":"single","question":"（    ）是贯穿中国革命道德始终的一根红线，是中国共产党在中国革命实践中的一个伟大创造，它对中国的革命、建设、改革事业产生了及其重大的推动作用。","options":{"A":"始终把革命利益放在首位","B":"实现共产主义","C":"修身自律，保持节操","D":"全心全意为人民服务"},"answer":"D"},{"id":"s44","type":"single","question":"（   ），体现了中国革命道德在社会生活层面上的重要意义。","options":{"A":"始终把革命利益放在首位","B":"树立社会新风，建立新型人际关系","C":"修身自律，保持节操","D":"全心全意为人民服务"},"answer":"B"},{"id":"s45","type":"single","question":"（   ）是社会主义道德的核心。","options":{"A":"为人民服务","B":"集体主义","C":"乐于助人","D":"诚实守信"},"answer":"A"},{"id":"s46","type":"single","question":"（   ）是社会主义道德的原则。","options":{"A":"为人民服务","B":"集体主义","C":"乐于助人","D":"诚实守信"},"answer":"B"},{"id":"s47","type":"single","question":"（   ）是道德的核心问题，决定并体现着道德建设的根本性质和发展方向，规定并制约着道德领域的所有道德现象。","options":{"A":"为人民服务","B":"为什么人服务","C":"集体主义","D":"诚实守信"},"answer":"B"},{"id":"s48","type":"single","question":"中华文化的精髓是（   ）。","options":{"A":"中国革命道德精神","B":"中华传统美德","C":"集体主义","D":"为人民服务"},"answer":"B"},{"id":"s49","type":"single","question":"清代林则徐提出“苟利国家生死以，岂因祸福避趋之”，这体现了传统美德基本精神的（   ）。","options":{"A":"重视整体利益，强调责任奉献","B":"推崇“仁爱”原则，注重以和为贵","C":"提倡人伦价值，重视道德义务","D":"追求精神境界，向往理想人格"},"answer":"A"},{"id":"s50","type":"single","question":"孟子提出“无恻隐之心，非人也”，这强调了中华传统美德基本精神中的（   ）。","options":{"A":"重视整体利益，强调责任奉献","B":"推崇“仁爱”原则，注重以和为贵","C":"提倡人伦价值，重视道德义务","D":"强调道德修养，注重道德践履"},"answer":"B"},{"id":"s51","type":"single","question":"“五教”的思想，即“父义”“母慈”“兄友”“弟恭”“子孝”。到了战国时期，孟子提出了影响深远的“五伦”说，都体现了中国传统美德中（   ）基本精神。","options":{"A":"重视整体利益，强调责任奉献","B":"推崇“仁爱”原则，注重以和为贵","C":"提倡人伦价值，重视道德义务","D":"追求精神境界，向往理想人格"},"answer":"C"},{"id":"s52","type":"single","question":"荀子说，人之所以能够保持群体性特征，归根结底是由于人能够遵守礼仪，否则人就会由于争斗而发生祸乱，进而造成彼此分离而变得缩小。这体现了中华传统美德中（   ）的基本精神。","options":{"A":"重视整体利益，强调责任奉献","B":"推崇“仁爱”原则，注重以和为贵","C":"提倡人伦价值，重视道德义务","D":"追求精神境界，向往理想人格"},"answer":"D"},{"id":"s53","type":"single","question":"儒家的经典《礼记.大学》中明确指出，“修身”是齐家、治国、平天下的前提和基础，孔子提倡“修己”“克己”和“慎独”，提倡“见贤思齐焉，见不贤而内自省”这都体现了中华传统美德中（   ）的基本精神。","options":{"A":"强调道德修养，注重道德践履","B":"推崇“仁爱”原则，注重以和为贵","C":"提倡人伦价值，重视道德义务","D":"追求精神境界，向往理想人格"},"answer":"A"},{"id":"s54","type":"single","question":"社会主义道德区别和优越于其他社会形态道德的显著标志是社会主义道德（   ）。","options":{"A":"以为人民服务为核心","B":"对社会行为的调节具有强制性","C":"对社会生活的调整具有广泛性","D":"对其他社会意识形态的存在和发展具有重大影响"},"answer":"A"},{"id":"s55","type":"single","question":"集体主义可以分为三个层次的道德要求，其中最高层次的道德要求是（   ）。","options":{"A":"无私奉献、一心为公","B":"先公后私、先人后己","C":"顾全大局、遵纪守法","D":"热爱祖国、诚实劳动"},"answer":"A"},{"id":"s56","type":"single","question":"集体主义可以分为三个层次的道德要求，其中对公民最基本的道德要求是（   ）。","options":{"A":"无私奉献、一心为公","B":"先公后私、先人后己","C":"顾全大局、遵纪守法、热爱祖国、诚实劳动","D":"助人为乐、爱护公物"},"answer":"C"},{"id":"s57","type":"single","question":"（   ）是社会公共生活中应当遵守的行为准则，在维护公共秩序方面具有重要的作用。","options":{"A":"家庭美德","B":"个人品德","C":"法律法规","D":"社会公德"},"answer":"D"},{"id":"s58","type":"single","question":"人类发展活动必须尊重自然、顺应自然、保护自然，否则就会遭到大自然的报复。这体现了社会公德中（   ）的道德规范。","options":{"A":"爱护公物","B":"保护环境","C":"遵纪守法","D":"文明礼貌"},"answer":"B"},{"id":"s59","type":"single","question":"（   ）是全体公民都必须遵循的基本行为准则，是维护公共生活秩序的重要条件。","options":{"A":"爱护公物","B":"保护环境","C":"遵纪守法","D":"文明礼貌"},"answer":"C"},{"id":"s60","type":"single","question":"（   ）是指人们由于社会分工所从事的具有专门业务和特定职责，并以此作为主要生活来源的社会活动。","options":{"A":"劳动","B":"实践","C":"职业","D":"创造"},"answer":"C"},{"id":"s61","type":"single","question":"从业者热爱自己的工作岗位、对工作极端负责、敬重自己所从事职业的道德操守，这体现了职业生活中（   ）的道德规范。","options":{"A":"诚实守信","B":"热爱劳动","C":"办事公道","D":"爱岗敬业"},"answer":"D"},{"id":"s62","type":"single","question":"（   ）不仅是从业者步入职业殿堂的通行证，体现着从业者的道德操守和人格力量，也是在行业中扎根立足的基础。","options":{"A":"诚实守信","B":"服务群众","C":"办事公道","D":"爱岗敬业"},"answer":"A"},{"id":"s63","type":"single","question":"（   ），就是要求从业人员做到公平、公正，不损公肥私，不以权谋私，不假公济私。","options":{"A":"诚实守信","B":"服务群众","C":"办事公道","D":"爱岗敬业"},"answer":"C"},{"id":"s64","type":"single","question":"（   ）是社会主义职业道德中最高层次的要求，体现了社会主义职业道德的最高目标指向。","options":{"A":"诚实守信","B":"服务群众","C":"奉献社会","D":"爱岗敬业"},"answer":"C"},{"id":"s65","type":"single","question":"目前，许多地方的基层单位特别是中西部地区的人才需求十分强烈，能够为大学生提供施展才华的广阔空间。这就要求大学生在择业和创业时要将自己的兴趣和意愿与（   ）结合起来。","options":{"A":"崇高的理想信念","B":"服从社会发展的需要","C":"培养创业的勇气","D":"做好充分的择业准备"},"answer":"B"},{"id":"s66","type":"single","question":"（   ）是社会的基本细胞，是人生的第一所学校。","options":{"A":"学校","B":"家庭","C":"社会","D":"单位"},"answer":"B"},{"id":"s67","type":"single","question":"“积善之家，必有余庆；积不善之家，必有余殃”这告诫我们要（   ）。","options":{"A":"注重家庭","B":"注重家教","C":"注重家风","D":"注重家业"},"answer":"C"},{"id":"s68","type":"single","question":"恋爱双方在相互关系上是平等的，都有给予爱、接受爱和拒绝爱的自由。这体现了恋爱中（   ）的道德规范。","options":{"A":"尊重人格平等","B":"自觉承担责任","C":"文明相亲相爱","D":"夫妻和睦"},"answer":"A"},{"id":"s69","type":"single","question":"恋人在公共场所出入，要遵守社会公德，不要对他人生活和公共生活造成不良影响。这体现了恋爱中（   ）的道德规范。","options":{"A":"尊重人格平等","B":"自觉承担责任","C":"文明相亲相爱","D":"遵守社会公德"},"answer":"C"},{"id":"s70","type":"single","question":"“老吾老以及人之老，幼吾幼以及人之幼”体现了家庭美德中（   ）的要求。","options":{"A":"男女平等","B":"夫妻和睦","C":"邻里团结","D":"尊老爱幼"},"answer":"D"},{"id":"s71","type":"single","question":"（   ）是道德和法律作用发挥的推动力量。","options":{"A":"个人品德","B":"家庭美德","C":"职业道德","D":"社会公德"},"answer":"A"},{"id":"s72","type":"single","question":"（   ）是个体人格完善的重要标志。","options":{"A":"个人品德","B":"家庭美德","C":"职业道德","D":"社会公德"},"answer":"A"},{"id":"s73","type":"single","question":"（   ）决定着一个人在实际生活和社会实践中的行为选择，以及对各种关系的协调和处理，直接显示出个人境界和素质的高低。","options":{"A":"个人品德","B":"家庭美德","C":"职业道德","D":"社会公德"},"answer":"A"},{"id":"s74","type":"single","question":"作为社会主义道德建设的落脚点，（   ）状况影响着社会主义市场经济制度的完善和社会主义民主法制的进程。","options":{"A":"个人品德","B":"家庭美德","C":"职业道德","D":"社会公德"},"answer":"A"},{"id":"s75","type":"single","question":"通过虚心学习，积极思索，辨别善恶，学善戒恶，以涵养良好的德性，这体现的是（   ）的道德修养方法。","options":{"A":"省察克治","B":"慎独自律","C":"学思并重","D":"知行合一"},"answer":"C"},{"id":"s76","type":"single","question":"（   ）的方法，即把提高道德认识与躬行道德实践统一起来，以促进道德要求内化为个人的道德品质，外化为实际的道德行为。","options":{"A":"省察克治","B":"慎独自律","C":"学思并重","D":"知行合一"},"answer":"D"},{"id":"s77","type":"single","question":"大学生投身崇德向善的道德实践，就要向（   ）学习，培养志愿服务精神，大力弘扬时代新风，强化社会责任意识、规则意识、奉献意识。","options":{"A":"英雄人物","B":"道德模范","C":"行业标兵","D":"影视剧英雄"},"answer":"B"},{"id":"s78","type":"single","question":"大学生要向道德模范学习，崇德向善、（   ）见贤思齐，传播正能量。","options":{"A":"弘扬真善美","B":"将思想转化为行动","C":"积极行动","D":"择善而从"},"answer":"A"},{"id":"s79","type":"single","question":"道德模范都是从自我做起，从身边事做起，从小事做起，以此实现由现实自我向（   ）的飞跃。","options":{"A":"理想自我","B":"理想彼岸","C":"完美自我","D":"完美人格"},"answer":"A"},{"id":"s80","type":"single","question":"我国社会主义法律是党的主张和（   ）的共同体现，是维护人民利益和公民权利的有力武器，是国家机关、社会组织和全体公民的活动规则和行为准绳。","options":{"A":"社会客观规律","B":"社会主要矛盾","C":"人民意志","D":"公民意志"},"answer":"C"},{"id":"s81","type":"single","question":"法律是由（    ）创制和实施的行为规范。","options":{"A":"国家","B":"社会","C":"公民","D":"人民"},"answer":"A"},{"id":"s82","type":"single","question":"法律由一定的社会物质生活条件所决定，其中（    ）是决定法律本质、内容和发展方向的根本因素。","options":{"A":"物质资料生产方式","B":"地理环境","C":"人口","D":"人民"},"answer":"A"},{"id":"s83","type":"single","question":"（   ）是人类历史上唯一以公有制为基础的新型法律制度。","options":{"A":"封建制法律","B":"资本主义法律","C":"社会主义法律","D":"奴隶制法律"},"answer":"C"},{"id":"s84","type":"single","question":"（   ）是法律运行的起始性和关键性环节。","options":{"A":"法律执行","B":"法律制定","C":"法律适用","D":"法律遵守"},"answer":"B"},{"id":"s85","type":"single","question":"（   ）国家的根本法。","options":{"A":"民法典","B":"刑法","C":"宪法","D":"未成年人保护法"},"answer":"C"},{"id":"s86","type":"single","question":"宪法的生命与权威在于（   ）。","options":{"A":"制定","B":"认识","C":"实施","D":"遵守"},"answer":"C"},{"id":"s87","type":"single","question":"从本质上说，我国（    ）是中国特色社会主义制度的重要组成部分，是党领导人民当家作主的制度保障。","options":{"A":"社会主义道德","B":"社会主义法律","C":"社会主义理论","D":"社会主义文化"},"answer":"B"},{"id":"s88","type":"single","question":"（   ）是指国家司法机关及其公职人员依照法定职权和程序适用法律处理案件的专门活动。","options":{"A":"法律制定","B":"法律执行","C":"法律适用","D":"法律遵守"},"answer":"C"},{"id":"s89","type":"single","question":"（   ）是治国安邦的总章程，是党和人民意志的集中体现，是中国特色社会主义法律体系的核心，在全面依法治国中具有突出地位和重要作用。","options":{"A":"民法典","B":"刑法","C":"宪法","D":"未成年人保护法"},"answer":"C"},{"id":"s90","type":"single","question":"我国的第一部宪法是（   ）。","options":{"A":"1949年颁布《中华人民政治协商会议共同纲领》","B":"1954年颁布《中华人民共和国宪法》","C":"1975年颁布《中华人民共和国宪法—一九七五年》","D":"1982年颁布《中华人民共和国宪法—一九八二年》"},"answer":"B"},{"id":"s91","type":"single","question":"我国的现行宪法是（   ）。","options":{"A":"1949年颁布《中华人民政治协商会议共同纲领》","B":"1954年颁布《中华人民共和国宪法》","C":"1975年颁布《中华人民共和国宪法—一九七五年》","D":"1982年颁布《中华人民共和国宪法—一九八二年》"},"answer":"D"},{"id":"s92","type":"single","question":"宪法只有不断适应新形势、吸纳新经验、确认新成果，才能具有持久生命力。我国现行宪法颁布至今，经历了（   ）次修正。","options":{"A":"3","B":"4","C":"5","D":"6"},"answer":"C"},{"id":"s93","type":"single","question":"（   ）是我国的国体。","options":{"A":"社会主义制度","B":"人民民主专政","C":"人民当家作主","D":"人民代表大会制度"},"answer":"B"},{"id":"s94","type":"single","question":"为了保证人民当家作主，我国宪法规定了（   ）这项根本政治制度。","options":{"A":"中国共产党领导的多党合作和政治协商制度","B":"民族区域自治制度","C":"基层群众自治制度","D":"人民代表大会制度"},"answer":"D"},{"id":"s95","type":"single","question":"我国的国家宪法日是（   ）。","options":{"A":"45231","B":"45234","C":"45261","D":"45264"},"answer":"D"},{"id":"s96","type":"single","question":"《中华人民共和国民法典》共（   ）编、1260条，各编依次为总则、物权、合同、人格权、婚姻家庭、继承、侵权责任，以及附则。","options":{"A":"5","B":"6","C":"7","D":"8"},"answer":"C"},{"id":"s97","type":"single","question":"甲在商场看中一件毛衣，标牌上的英文显示毛衣成分为腈纶。甲不懂英文，便向营业员询问，营业员骗其说是羊毛，甲遂买下毛衣。商场营业员的行为违背了民法的（   ）。","options":{"A":"平等原则","B":"公平原则","C":"诚实守信原则","D":"禁止权利滥用原则"},"answer":"C"},{"id":"s98","type":"single","question":"文某欲买房，张某欲卖房，两人协商过程中，张某坚持单价为1万元，文某坚持八千元，双方未达成一致。一日，文某见张某患病无力，迫使张某在准备好的合同上签字。关于文某的行为违背哪项民法原则，下列正确的是（   ）。","options":{"A":"自愿原则","B":"平等原则","C":"诚实原则","D":"公平原则"},"answer":"A"},{"id":"s99","type":"single","question":"《民法典》第一千零七十七条规定，自婚姻登记机关收到离婚登记申请之日起（   ）内，任何一方不愿意离婚的，可以向婚姻登记机关撤回离婚登记申请。","options":{"A":"二十日","B":"十五日","C":"三十日","D":"三十五日"},"answer":"C"},{"id":"s100","type":"single","question":"甲有父母、一妻一子（5岁），死亡时家中财产共有240万元，如何继承？（   ）","options":{"A":"父母80万，妻80万，儿子80万","B":"父母妻子四人各60万","C":"妻150万，父母子各30万","D":"妻180万，父母各30万，子为无民事行为能力人，无继承权"},"answer":"C"},{"id":"s101","type":"single","question":"民法典继承编规定立有数份遗嘱，内容相抵触的，以（   ）为准。","options":{"A":"最后的遗嘱","B":"公证遗嘱","C":"遗赠扶养协议","D":"遗赠"},"answer":"A"},{"id":"s102","type":"single","question":"（   ）是规定犯罪与刑罚的法律规范。它通过规范国家刑罚权，惩罚犯罪，保护人民，维护社会秩序和公共安全，保障国家安全。","options":{"A":"民法典","B":"预防未成年人犯罪法","C":"刑法","D":"宪法"},"answer":"C"},{"id":"s103","type":"single","question":"为了使国家、公共利益、本人或者他人的人身、财产和其他权利免受正在进行的不法侵害，而采取的制止不法侵害的行为，对不法侵害人造成损害的，属于（   ），不负刑事责任。","options":{"A":"紧急避险","B":"正当防卫","C":"故意伤害","D":"故意杀人"},"answer":"B"},{"id":"s104","type":"single","question":"王某和李某素有仇怨，李某扬言要找机会杀掉王某，王某得知后，先下手除掉了李某。王某的行为（   ）。","options":{"A":"属于正当防卫，不负刑事责任","B":"属于意外事件，不负刑事责任","C":"属于自救行为，不负刑事责任","D":"属于故意杀人，应当负刑事责任"},"answer":"D"},{"id":"s105","type":"single","question":"甲正在一偏僻地段对一名女性实施抢劫，被正在路过的乙看到，乙捡起旁边石块向甲砸去，正打中甲的头部，导致甲死亡。乙的行为属于（   ）。","options":{"A":"紧急避险","B":"防卫过当","C":"无过当防卫","D":"过失致人死亡"},"answer":"C"},{"id":"s106","type":"single","question":"法无明文规定不为罪，法无明文规定不处罚。这体现的是刑法的（   ）原则。","options":{"A":"法律面前人人平等","B":"罪刑相适应","C":"罪刑法定","D":"诚实守信"},"answer":"C"},{"id":"s107","type":"single","question":"犯多重的罪，就应该承担多重的刑事责任。这体现的是刑法的（   ）原则。","options":{"A":"法律面前人人平等","B":"罪刑相适应","C":"罪刑法定","D":"诚实守信"},"answer":"B"},{"id":"s108","type":"single","question":"下列选项中属于刑法规定的刑罚中的主刑的是（   ）。","options":{"A":"罚金","B":"有期徒刑","C":"剥夺政治权力","D":"没收财产"},"answer":"B"},{"id":"s109","type":"single","question":"下列选项中属于刑法规定的刑罚中的附加刑的是（   ）。","options":{"A":"管制","B":"拘役","C":"死刑","D":"罚金"},"answer":"D"},{"id":"s110","type":"single","question":"（   ），是中国特色社会主义法治体系的前提，是法治国家、法治政府、法治社会的制度基础。","options":{"A":"完备的法律规范体系","B":"高效的法治实施体系","C":"严密的法治监督体系","D":"有力的法治保障体系"},"answer":"A"},{"id":"s111","type":"single","question":"建设（   ），是建设中国特色社会主义法治体系的重点。","options":{"A":"完备的法律规范体系","B":"高效的法治实施体系","C":"严密的法治监督体系","D":"有力的法治保障体系"},"answer":"B"},{"id":"s112","type":"single","question":"（   ），是指以规范和约束公权力为重点建立的有效的法治化权力监督网络。","options":{"A":"完备的法律规范体系","B":"高效的法治实施体系","C":"严密的法治监督体系","D":"有力的法治保障体系"},"answer":"C"},{"id":"s113","type":"single","question":"（   ），是全面依法治国的重要依托。","options":{"A":"完备的法律规范体系","B":"高效的法治实施体系","C":"严密的法治监督体系","D":"有力的法治保障体系"},"answer":"D"},{"id":"s114","type":"single","question":"建设（   ），是中国特色社会主义法治体系的本质要求和重要内容。","options":{"A":"完备的法律规范体系","B":"完善的党内法规体系","C":"严密的法治监督体系","D":"有力的法治保障体系"},"answer":"B"},{"id":"s115","type":"single","question":"（   ）是法治的龙头环节。","options":{"A":"立法","B":"执法","C":"司法","D":"守法"},"answer":"A"},{"id":"s116","type":"single","question":"（   ）是法治的生命线，是司法活动最高的价值追求。","options":{"A":"公开","B":"公正","C":"公平","D":"严格"},"answer":"B"},{"id":"s117","type":"single","question":"（   ）是维护社会公平正义的最后一道防线。","options":{"A":"科学立法","B":"严格执法","C":"公正司法","D":"全民守法"},"answer":"C"},{"id":"s118","type":"single","question":"（   ）是中国特色社会主义最本质的特征，是社会主义法治最根本的保证。","options":{"A":"党的领导","B":"人民主权","C":"公平正义","D":"办事公道"},"answer":"A"},{"id":"s119","type":"single","question":"（   ），是社会主义法治的根本要求是全面依法治国的题中应有之义。","options":{"A":"坚持人民当家作主","B":"坚持人民主体地位","C":"坚持党的领导","D":"坚持法律面前人人平等"},"answer":"C"},{"id":"s120","type":"single","question":"法治思维主要包括法律至上、权力制约、（   ）、权利保障、正当程序等内容。","options":{"A":"公平正义","B":"办事公道","C":"诚实守信","D":"奉献社会"},"answer":"A"},{"id":"s121","type":"single","question":"古人云:“为国也，观俗立法则治，察国事 本则宜。不观时俗，不 察国本，则其法立而民乱，事剧而功寡。”，这段话说明了（   ）。","options":{"A":"建设法治中国，必须从我国实际出发","B":"要关起门来搞法治","C":"要将某种法治理论或成果当成唯一准则","D":"要向西方学习，全面移植"},"answer":"A"},{"id":"s122","type":"single","question":"关于法治思维，正确的表述是（   ）。","options":{"A":"法治思维以法治价值和法治精神为依据","B":"法治思维以法律原则和法律规则为指导","C":"法治思维以法律手段与法律方法为依托","D":"法治思维是一种部分符合规律、尊重事实的科学思维"},"answer":"C"},{"id":"s123","type":"single","question":"公民应履行的法律义务不包括（   ）。","options":{"A":"维护国家统一和民族团结","B":"遵守宪法和法律","C":"依法纳税","D":"宗教信仰自由"},"answer":"D"},{"id":"s124","type":"single","question":"曾子说：“吾日三省吾身：为人谋而不忠乎？与朋友交而不信乎？传不习乎？”这属于中国传统道德修养方法中的(      )。","options":{"A":"陶冶情操","B":"积善成德","C":"省察克治","D":"慎独自律"},"answer":"C"},{"id":"s125","type":"single","question":"下列关系中，属于法律关系的是（   ）。","options":{"A":"杨过对郭靖说：“这柄玄铁重剑就赠与郭伯伯，盼郭伯伯能保境安民！”","B":"小龙女对杨过说：“如果你通过了法律职业资格考试，我便陪你去欧洲旅游。”","C":"张无忌对周芷若说：“若义父无恙归来，我便娶你为妻。”","D":"岳灵珊对林平之说：“海枯石烂，两情不渝。”"},"answer":"A"}],"multi":[{"id":"m1","type":"multi","question":"核心价值观是（    ）。","options":{"A":"在一个社会的思想观念体系中处于主导地位","B":"一定社会形态社会性质的集中体现","C":"体现着一个社会评判是非曲直的价值标准","D":"体现着社会制度、社会运行的基本原则和社会发展的基本方向"},"answer":"ABCD"},{"id":"m2","type":"multi","question":"社会主义核心价值观（    ）为我们坚定核心价值观自信提供了充分的理由。","options":{"A":"强大的道义力量","B":"丰厚的历史底蕴","C":"坚实的现实基础","D":"强大的理论自信"},"answer":"ABC"},{"id":"m3","type":"multi","question":"社会主义核心价值观以其（   ）而居于人类社会的价值制高点，具有强大的道义力量。","options":{"A":"人民性","B":"先进性","C":"阶级性","D":"真实性"},"answer":"ABD"},{"id":"m4","type":"multi","question":"社会主义核心价值观与社会主义核心价值体系的关系（    ）。","options":{"A":"社会主义核心价值观是社会主义核心价值体系的高度凝练和集中表达","B":"社会主义核心价值体系是社会主义核心价值观的精神内核","C":"两者是紧密联系、互为依存、相辅相成的","D":"社会主义核心价值观体现了社会主义核心价值体系的根本性质和基本特征"},"answer":"ACD"},{"id":"m5","type":"multi","question":"大学生要按照（    ）原则，努力把核心价值观的要求变成日常的行为准则。","options":{"A":"从现在做起","B":"由近及远","C":"由易到难","D":"从自己做起"},"answer":"ABCD"},{"id":"m6","type":"multi","question":"社会主义核心价值体系的基本内容是（    ）。","options":{"A":"中国特色社会主义共同理想","B":"以爱国主义为核心的民族精神和以改革创新为核心的时代精神","C":"马克思主义指导思想","D":"社会主义荣辱观"},"answer":"ABCD"},{"id":"m7","type":"multi","question":"人类社会发展的历史表明，对一个民族、一个国家来说，最持久，最深层次的力量是全社会共同认可的核心价值观。积极培育和践行社会主义核心价值观，有利于（     ）。","options":{"A":"促进人的全面发展和引领社会全面进步","B":"巩固全党全国人民团结奋斗的共同思想基础","C":"巩固马克思主义在意识形态领域的指导地位","D":"集聚实现中华民族伟大复兴中国梦的强大正能量"},"answer":"ABCD"},{"id":"m8","type":"multi","question":"社会主义核心价值观把涉及国家、社会、公民的价值要求融为一体，体现了社会主义本质要求，回答了我们要（     ）三个重大问题。","options":{"A":"建设什么样的社会","B":"培育什么样的公民","C":"构建什么样的文化","D":"建设什么样的国家"},"answer":"ABD"},{"id":"m9","type":"multi","question":"道德随着社会形态的发展，也历经了不同的历史类型，即（   ）、社会主义社会的道德。在社会主义社会，有一部分先进分子，在身体力行共产主义道德。","options":{"A":"原始社会的道德","B":"奴隶社会的道德","C":"封建社会的道德","D":"资本主义社会的道德"},"answer":"ABCD"},{"id":"m10","type":"multi","question":"大学生要弘扬真善美、贬斥假恶丑，做社会主义道德的示范者和引领者，促成（  ）的社会风尚。","options":{"A":"知荣辱、讲正气","B":"知义利、明大义","C":"明善恶、辨美丑","D":"作奉献、促和谐"},"answer":"AD"},{"id":"m11","type":"multi","question":"马克思主义认为，道德产生的前提和条件有（    ）。","options":{"A":"人类自我意识的形成与发展是道德产生的主观条件","B":"神的启示","C":"社会关系的形成是道德赖以产生的客观条件","D":"劳动创造了人和人类社会，是人类道德起源的第一个历史前提"},"answer":"ACD"},{"id":"m12","type":"multi","question":"下列关于道德的作用说法正确的有（      ）。","options":{"A":"道德具有阶级性","B":"道德是个体成长、发展和完善的核心内容","C":"道德为经济基础的形成、巩固和发展服务。道德是一种重要的精神力量","D":"道德对其他社会意识形态的存在有着重大影响"},"answer":"ABCD"},{"id":"m13","type":"multi","question":"道德是以善恶为评价标准，主要依靠（   ）来发挥其规范和调节人们行为的功能与作用。","options":{"A":"传统习俗","B":"外在强制","C":"社会舆论","D":"内心信念"},"answer":"ACD"},{"id":"m14","type":"multi","question":"马克思主义科学地揭示了道德的起源与本质，下列关于道德起源和本质的说法中，正确的有（     ）。","options":{"A":"道德产生于人类的历史发展和人们的社会实践中","B":"道德属于上层建筑的范畴，是一种特殊的社会意识形态","C":"道德是先天具有的某种良知和善良意志","D":"道德是社会经济基础决定的，并为社会经济基础服务"},"answer":"ABD"},{"id":"m15","type":"multi","question":"道德是以善恶为评价标准，主要依靠社会舆论、传统习俗和内心信念来发挥规范人们行为的重要和功能的。道德具有以下（    ）激励等功能。","options":{"A":"导向","B":"调节","C":"规范","D":"认识"},"answer":"ABCD"},{"id":"m16","type":"multi","question":"当代大学生应当遵守网络生活中的道德要求，成为营造清朗网络空间的正能量。为此，大学生要做到（   ）。","options":{"A":"加强网络道德自律","B":"正确使用网络工具","C":"自觉避免沉迷网络","D":"健康进行网络交往"},"answer":"ABCD"},{"id":"m17","type":"multi","question":"中国革命道德，是指（   ）在中国革命、建设、改革中所形成的优秀道德，是马克思主义与中国革命、建设、改革的伟大实践相结合的产物，是中华民族极其宝贵的道德财富。","options":{"A":"人民群众","B":"中国共产党人","C":"一切先进分子","D":"人民军队"},"answer":"ABCD"},{"id":"m18","type":"multi","question":"集体主义强调（    ）的辩证统一。","options":{"A":"社会团体利益","B":"国家利益","C":"社会整体利益","D":"个人利益"},"answer":"BCD"},{"id":"m19","type":"multi","question":"据我国现阶段经济社会生活和人们思想道德的实际，可将集体主义分为不同层次的道德要求，即（      ）。","options":{"A":"先公后私、先人后己","B":"顾全大局、遵纪守法、热爱祖国、诚实劳动等","C":"无私奉献、一心为公","D":"自私自利、损人利己"},"answer":"ABC"},{"id":"m20","type":"multi","question":"虽然“为人民服务”产生于革命战争年代，但它一经产生，就成为（     ）。","options":{"A":"中国共产党践行的根本宗旨","B":"全体中国人民共同遵循的道德要求","C":"我党的一切工作的根本出发点和落脚点","D":"社会主义道德观的集中体现"},"answer":"ABCD"},{"id":"m21","type":"multi","question":"个人品德是一定社会、一定时代的道德要求，转化为个人的道德信念，所形成的稳定的行为习惯。它是（    ）和道德行为的内在统一。","options":{"A":"道德信念","B":"道德情感","C":"道德认知","D":"道德意志"},"answer":"ABCD"},{"id":"m22","type":"multi","question":"加强道德修养，提升个人品德，应采用（   ）等修养方法。","options":{"A":"顺其自然","B":"慎独自律","C":"省察克治","D":"学思并重"},"answer":"BCD"},{"id":"m23","type":"multi","question":"作为社会主义道德的基本原则的集体主义的科学内涵包括（     ）。","options":{"A":"集体主义强调国家利益、社会整体利益高于个人利益","B":"集体主义重视和保障个人的正当利益","C":"集体主义强调国家利益、社会整体利益和个人利益的辩证统一","D":"不用顾忌和保障个人的正当利益"},"answer":"ABC"},{"id":"m24","type":"multi","question":"大学生应正确认识和处理国家、集体、个人的利益关系，自觉坚持个人利益服从集体利益、局部利益服从整体利益、当前利益服从长远利益，反对（    ）。","options":{"A":"极端个人主义","B":"本位主义","C":"小团体主义","D":"一切个人利益"},"answer":"ABC"},{"id":"m25","type":"multi","question":"社会公德的具体内容主要有（      ）。","options":{"A":"保护环境","B":"爱护公物","C":"文明礼貌、助人为乐","D":"遵纪守法"},"answer":"ABCD"},{"id":"m26","type":"multi","question":"中国革命道德的主要内容包括（     ）。","options":{"A":"修身自律、保持节操","B":"始终把革命利益放在首位","C":"全心全意为人民服务","D":"为实现社会主义和共产主义理想而奋斗"},"answer":"ABCD"},{"id":"m27","type":"multi","question":"国家强制力不是保证法律实施的唯一力量，以下各项（    ）也在保证法律实施中也发挥着重要作用。","options":{"A":"价值观念","B":"道德观念","C":"纪律观念","D":"法律意识"},"answer":"ABCD"},{"id":"m28","type":"multi","question":"要做到尊重他人权利，应意识到（   ）。","options":{"A":"尊重他人权利，也应纳入道德建设、价值观建设之中","B":"权利意识的进步既包括保护自己的权利，也包括尊重他人的权利","C":"不尊重他人的权利，最终往往导致自身的权益受损","D":"尊重他人权利，本身就是一项法律义务"},"answer":"ABCD"},{"id":"m29","type":"multi","question":"以下行为中，违反我国宪法法律所规定的公民法律义务的是（    ）。","options":{"A":"高中毕业后进入大学读书，没有应征入伍","B":"出于自己的政治和历史认识，支持台湾地区人民通过公投决定独立","C":"外国人来华工作三个月期间，没有填报个人所得税","D":"为展示国家实力、维护国家声誉，在网络上与他人争论时，列举我国特定军港的舰船类型和数量"},"answer":"BD"},{"id":"m30","type":"multi","question":"法律的含义主要包括以下方面的内容（       ）。","options":{"A":"法的内容是由一定的物质生活条件决定的","B":"法律是由国家创制和实施的行为规范","C":"法是统治阶级意志的体现","D":"法律靠人们对内心信念发挥作用"},"answer":"ABC"},{"id":"m31","type":"multi","question":"划分法律的历史类型有助于认识和揭示法律的阶级本质及其发展变化的历史规律。与人类进入阶级社会后的社会形态划分相一致，人类社会存在以下几种类型的法律（     ）。","options":{"A":"社会主义法律","B":"奴隶制法律","C":"封建制法律","D":"资本主义法律"},"answer":"ABCD"},{"id":"m32","type":"multi","question":"以下哪些权利不属于我国公民的财产权利的范围（    ）。","options":{"A":"知识产权","B":"取得劳动报酬的权利","C":"继承遗产的权利","D":"获得社会保障的权利"},"answer":"BD"},{"id":"m33","type":"multi","question":"以下行为属于侵犯公民通信自由权的是（    ）。","options":{"A":"私自拆阅他人通信","B":"公安机关依职权检查公民通信","C":"损毁他人通信","D":"扣押他人通信"},"answer":"ACD"},{"id":"m34","type":"multi","question":"下列属于法律制定程序的是（     ）。","options":{"A":"法律案的提出","B":"法律案的通过","C":"法律适用","D":"法律案的审议"},"answer":"ABD"},{"id":"m35","type":"multi","question":"法律的运行是一个从创制、实施到实现的过程。这个过程主要包括（      ）等环节。","options":{"A":"法律遵守","B":"法律适用","C":"法律执行","D":"法律制定"},"answer":"ABCD"},{"id":"m36","type":"multi","question":"1978年，党的十一届三中全会提出的我国法制建设的16字方针是（        ）。","options":{"A":"有法可依","B":"执法必严","C":"违法必究","D":"有法必依"},"answer":"ABCD"},{"id":"m37","type":"multi","question":"中华人民共和国宪法拥有至高无上的地位，是基于以下原因（         ）。","options":{"A":"从效力上看，我国宪法是国家各项制度和法律法规的总依据","B":"从内容上看，我国宪法规定了国家的根本制度","C":"从作用上看，它是治国安邦的总章程，是党和人民意志的集中体现","D":"从地位上看，我国宪法是国家的根本大法"},"answer":"ABCD"},{"id":"m38","type":"multi","question":"我国刑法的原则有（    ）。","options":{"A":"罪行法定原则","B":"乱世用重典原则","C":"法律面前人人平等","D":"罪刑相适应原则"},"answer":"ACD"},{"id":"m39","type":"multi","question":"走中国特色社会主义法治道路，必须做到（  ）以及坚持从中国实际出发。","options":{"A":"坚持中国共产党的领导","B":"坚持法律面前人人平等","C":"坚持依法治国和以德治国相结合","D":"坚持人民主体地位"},"answer":"ABCD"},{"id":"m40","type":"multi","question":"我国宪法从效力上看，宪法与普通法律关系表现在（    ）。","options":{"A":"宪法是其他一般法律的立法基础","B":"是国家各项制度和法律法规的总依据","C":"法律的制定不得同宪法相抵触，如有抵触，法律即无效","D":"宪法在中国特色社会主义法律体系中居于统帅地位"},"answer":"ABCD"},{"id":"m41","type":"multi","question":"法治思维与人治思维的区别主要表现在（    ）。","options":{"A":"遵循的价值不同","B":"标准不同","C":"依据不同","D":"调节方式不同"},"answer":"ABCD"},{"id":"m42","type":"multi","question":"法治思维的基本内容是（    ）。","options":{"A":"权利保障和正当程序","B":"权力制约","C":"公平正义","D":"法律至上"},"answer":"ABCD"},{"id":"m43","type":"multi","question":"大学生可以通过以下哪些途径培养法治思维方式（     ）。","options":{"A":"参与法律实践","B":"研究犯罪心理","C":"学习法律知识","D":"掌握法律方法"},"answer":"ACD"},{"id":"m44","type":"multi","question":"尊重法律权威是公民法定义务和必备素质,尊重法律权威的基本要求包括（    ）。","options":{"A":"服从法律","B":"遵守法律","C":"维护法律","D":"信仰法律"},"answer":"ABCD"},{"id":"m45","type":"multi","question":"公民应尽的法律义务包括（   ）。","options":{"A":"依法服兵役和依法纳税","B":"维护祖国安全、荣誉和利益","C":"遵守宪法和法律","D":"维护国家统一和民族团结"},"answer":"ABCD"},{"id":"m46","type":"multi","question":"我国宪法确立的制度有（     ）。","options":{"A":"基本经济制度","B":"根本政治制度","C":"国体","D":"基本政治制度"},"answer":"ABCD"},{"id":"m47","type":"multi","question":"下列关于中国特色社会主义法治体系五大体系的说法，正确的是（   ）。","options":{"A":"既有国家层面，也有党的层面","B":"既能实现依法治国，又能实现以德治国","C":"既有理论层面，也有实践层面","D":"既有制度层面，也有运行层面"},"answer":"ACD"},{"id":"m48","type":"multi","question":"“法律面前人人平等”，所以（     ）。","options":{"A":"每个人都既享有法律权利，又应当依法履行法律义务","B":"个人无论是行使权利还是履行义务，都是对自己有益的","C":"没有人能享有超越法律的特权","D":"法律上不允许特殊主体的存在"},"answer":"ABC"},{"id":"m49","type":"multi","question":"我国宪法法律规定的公民权利与义务具有（    ）。","options":{"A":"公平性","B":"强制性","C":"广泛性","D":"真实性"},"answer":"ACD"},{"id":"m50","type":"multi","question":"下列关于我国公民的选举权利与义务的说法，正确的是（     ）。","options":{"A":"每一个中华人民共和国公民都享有选举权和被选举权","B":"选举权和被选举权不可分离","C":"对于不称职的公职人员，选民只能投票决定其任期届满不再继续任职","D":"违法犯罪的人可能被剥夺选举权"},"answer":"BD"}],"judge":[{"id":"j1","type":"judge","question":"一个人的成长奋斗，离不开核心价值观的指引。","answer":"Y"},{"id":"j2","type":"judge","question":"社会主义核心价值观只是一种价值理念,与行为无关。","answer":"N"},{"id":"j3","type":"judge","question":"文化的力量，归根到底来自于凝结其中的核心价值观的影响力和感召力；文化软实力的竞争，本质上是不同文化所代表的核心价值观的竞争。","answer":"Y"},{"id":"j4","type":"judge","question":"社会主义核心价值体系体现了社会主义核心价值观的根本性质和基本特征。","answer":"N"},{"id":"j5","type":"judge","question":"富强、民主、文明、和谐，这一价值追求回答了我们要建设什么样的社会的重大问题。","answer":"N"},{"id":"j6","type":"judge","question":"自由、平等、公正、法治，这一价值追求回答了我们要培育什么样的公民的重大问题，涵盖了社会公德、职业道德、家庭美德、个人品德等各个方面，是每一个公民都应当遵守的道德规范。","answer":"N"},{"id":"j7","type":"judge","question":"当今世界，文化软实力越来越成为争夺发展制高点、道义制高点的关键所在。而核心价值观是文化软实力的灵魂、文化软实力建设的重点。","answer":"Y"},{"id":"j8","type":"judge","question":"社会主义核心价值观的先进性，体现在它代表的是最广大人民的根本利益。","answer":"N"},{"id":"j9","type":"judge","question":"社会主义核心价值观是社会主义核心价值体系的精神内核，它体现了社会主义核心价值体系的根本性质和基本特征，反映了社会主义核心价值体系的丰富内涵和实践要求，是社会主义核心价值体系的高度凝练和集中表达。","answer":"Y"},{"id":"j10","type":"judge","question":"核心价值观的养成绝非一日之功。大学生要坚持由难到易、由远及远，大事做起。","answer":"N"},{"id":"j11","type":"judge","question":"道德来源于经济关系，而经济关系在阶级社会中主要表现为阶级关系，道德必然带有阶级属性。","answer":"Y"},{"id":"j12","type":"judge","question":"慎独自律就是在无人知晓、无人监督的情况下，仍能坚守道德操守，自觉自愿的按道德要求办事。","answer":"Y"},{"id":"j13","type":"judge","question":"反映先进生产力发展要求和进步阶级利益的道德，对社会的发展和进步产生积极的推动作用。","answer":"Y"},{"id":"j14","type":"judge","question":"公共生活、职业生活和婚姻家庭生活是人们社会生活中重要的三大领域。","answer":"Y"},{"id":"j15","type":"judge","question":"法律与道德同属于由一定经济基础决定的上层建筑和社会意识形态，都是规范人们行为的，可以相互替代。","answer":"N"},{"id":"j16","type":"judge","question":"推崇仁爱原则，追求人际和谐是中华民族优良道德传统的内容之一。","answer":"Y"},{"id":"j17","type":"judge","question":"全心全意为人民服务是贯穿中国革命道德始终的一根红线，也是中国共产党在中国革命实践中的一个伟大创造。","answer":"Y"},{"id":"j18","type":"judge","question":"道德是国家强制力保证实施的。","answer":"N"},{"id":"j19","type":"judge","question":"中国革命道德是超越了中华传统美德的时代局限而形成的一种崭新的道德。","answer":"Y"},{"id":"j20","type":"judge","question":"集体主义是对个人的压制、对个性的束缚。","answer":"N"},{"id":"j21","type":"judge","question":"网络社会再复杂，本质上仍然是现实社会中人们的真实生活。","answer":"Y"},{"id":"j22","type":"judge","question":"每个人的正当利益，都是国家利益、社会整体利益不可分割的组成部分。","answer":"Y"},{"id":"j23","type":"judge","question":"职业生活中的道德规范，不仅对各行各业的从业者具有引导和约束作用，也是促进社会持续健康、有序发展的必要条件。","answer":"Y"},{"id":"j24","type":"judge","question":"在社会中，人既作为个体而存在，又作为集体中的一员而存在，集体和个人是不能分割的。","answer":"Y"},{"id":"j25","type":"judge","question":"家是国的基础，国是家的倚靠，家与国从来都不是割裂的，而是相互联系、彼此支撑。","answer":"Y"},{"id":"j26","type":"judge","question":"一切社会领域的道德建设，最终都要落实到个人品德的养成上。","answer":"Y"},{"id":"j27","type":"judge","question":"个人品德在社会道德建设中具有基础性作用。","answer":"Y"},{"id":"j28","type":"judge","question":"法是统治阶级意志的体现，即统治阶级内部每个成员意志之和。","answer":"N"},{"id":"j29","type":"judge","question":"法律不是从来就有的，也不会永恒存在。","answer":"Y"},{"id":"j30","type":"judge","question":"我国所有的法律，表示同意的票数过半即通过。","answer":"N"},{"id":"j31","type":"judge","question":"国务院作为国家最高行政机关没有法律案的提案权。","answer":"N"},{"id":"j32","type":"judge","question":"人民法院代表国家行使法律监督权，人民检察院代表国家行使公诉权。","answer":"N"},{"id":"j33","type":"judge","question":"作为国家的根本大法----宪法，高高在上和我们的生活没有关系。","answer":"N"},{"id":"j34","type":"judge","question":"根据法律规定的内容不同，可以将法律划分为实体法和程序法。","answer":"Y"},{"id":"j35","type":"judge","question":"实体法，是指规定具体权利义务内容或者法律保护的具体情况的法律。","answer":"Y"},{"id":"j36","type":"judge","question":"我国的程序法律部门只有诉讼法，不包括非诉讼程序法。","answer":"N"},{"id":"j37","type":"judge","question":"公正是法治的生命线。要让人民群众在每一个司法案件中感受到公平正义。","answer":"Y"},{"id":"j38","type":"judge","question":"一般地，法治思维包括，法律至上、权力制约、公平正义、人权保障、正当程序等内容。","answer":"Y"},{"id":"j39","type":"judge","question":"司法保障是权利保障的最后防线。","answer":"Y"},{"id":"j40","type":"judge","question":"没有无义务的权利，也没有无权利的义务。","answer":"Y"},{"id":"j41","type":"judge","question":"公民对国家机关和国家工作人员在工作中的错误、缺点提出谴责性的意见是行使公民的监督权。","answer":"Y"},{"id":"j42","type":"judge","question":"在现代法治社会，人们行使任何权利、做任何事情都不能超越法律界限。","answer":"Y"},{"id":"j43","type":"judge","question":"党内法规也是中国特色社会主义法治体系的组成部分。","answer":"Y"},{"id":"j44","type":"judge","question":"法律权利的内容、分配和实现方式因社会制度和国家法律的不同而存在差异。","answer":"Y"},{"id":"j45","type":"judge","question":"全面推进依法治国，总目标是建设中国特色社会主义法治体系，建设社会主义法治国家。","answer":"Y"},{"id":"j46","type":"judge","question":"法治是治国理政的重要方式，德治是治国理政的基本方式。","answer":"N"},{"id":"j47","type":"judge","question":"法律是治国之重器，立法是法治的龙头环节。","answer":"Y"},{"id":"j48","type":"judge","question":"党的领导是中国特色社会主义最本质的特征，是社会主义法治最根本的保证。","answer":"Y"},{"id":"j49","type":"judge","question":"社会主义法律是人类历史上唯一以公有制为基础的新型法律制度。","answer":"Y"},{"id":"j50","type":"judge","question":"法律是底线的道德，也是道德的保障。","answer":"Y"}],"essay":[{"id":"e1","type":"essay","question":"请简述大学生应当如何自觉践行社会主义核心价值观？","answer":"青年的价值取向，既关系着自己的健康成长成才，又决定着未来整个社会的价值取向。青年是引风气之先的社会力量。在全社会培育和弘扬社会主义核心价值观，需要大学生始终走在时代前列，成为社会主义核心价值观的坚定信仰者、积极传播者、模范践行者。\n   （一）扣好人生的扣子\n    ①大学生成长成才和全面发展，离不开正确价值观的引领。面对世界范围内各种思想文化交流交融交锋的新形势，面对整个社会思想价值观念呈现多元多样、复杂多变的新特点，大学生健康成长成才更加需要正确价值观的引领。\n②核心价值观的养成绝非一日之功。大学生要坚持由易到难、由近及远，从现在做起，从自己做起，努力把核心价值观的要求变成日常的行为准则，形成自觉奉行的信念理念，并身体力行大力将其推广到全社会去，为实现国家富强、民族振兴、人民幸福的中国梦凝聚强大的青春能量。\n    （二）勤学修德明辨笃实\n    培育和践行社会主义核心价值观，既要目标高远，保持定力、不懈奋进，又要脚踏实地，严于律己、精益求精，将社会主义核心价值观转化为人生的价值准则，勤学以增智、修德以立身、明辨以正心、笃实以为功。"},{"id":"e2","type":"essay","question":"请简述社会主义道德为什么要以为人民服务为核心？","answer":"为人民服务是社会主义道德的核心。这主要是因为：\n（1）为人民服务是社会主义经济基础和人际关系的客观要求\n在我国，以公有制为主体和以按劳分配为主体，是为人民服务的根本制度保证，在此基础上逐步形成的团结互助、平等友爱、共同进步的人际关系，是为人民服务的基础。\n（2）为人民服务是社会主义市场经济健康发展的要求\n社会主义市场经济本质上要求为人民服务，不仅在于人们在一切经济活动中，应正确处理个人与社会、竞争与协作、效率与公平、先富与共富、经济效益与社会效益等关系；更在于强调在社会主义物质文明和精神文明的引导下，每个市场主体都要有为人民服务的思想。\n（3）为人民服务是先进性要求和广泛性要求的统一\n为人民服务，既伟大又平凡，既高尚又普通，它并非高不可攀、远不可及，而是可以通过不同层次、不同形式表现出来。\n为人民服务作为社会主义道德的核心，是社会主义道德区别和优越于其他社会形态道德的显著标志。"},{"id":"e3","type":"essay","question":"大学生应当如何培养法治思维？请联系实际谈谈你的看法。","answer":"法治思維是指以法治价值和法治精神为导向，运用法律原则、法律规则、法律方法思考和处理问题的思维模式。一般来讲，法治思维主要包括法律至上、权力制约、公平正义、权利保障、正当程序等内容。\n对于大学生培养法治思维的方法，我认为有以下几点：\n(1)学习法律知识\n学习和掌握基本的法律知识，是培养法治思维的前提。法律知识通常包括法律法规方面的知识和法律原理方面的知识，这两部分法律知识对于培养法治思维都很重要。只有了解法律法规及其原理、原则，才能更好地领会法律精神，养成法治思维。\n(2)掌握法律方法\n法治思维的过程，就是运用法律方法思考、分析和解决法律问题的过程。法律方法主要包括两个方面；正确理解法律的方法，包括理解法律条文的含义、内容和精神等；正确运用法律的方法。理解和运用法律的基本方法， 有助于培养法治思维。\n(3)参与法律实践\n法治思维是在丰富的法治实践中训练、培养和应用的思维方式。只有通过参与各种法律活动，才能养成自觉的法治思维习惯。人们参加法律实践的方法：一是参与立法讨论；二是依法行使监督权；三是旁听司法审判；四是参与模拟法庭、法律诊所、法律辩论等活动。\n(4)养成守法习惯\n法治思维是一种习惯性思维，与长期自觉养成的生活习惯有很大关系。公民只有自觉遵守宪法和法律，坚持从我做起，从身边做起，从具体问题做起，才能养成守法的习惯和法治思维。\n(5)守住法律底线\n法律红线不可逾越、法律底线不可触碰。法律不能成为“橡皮泥”“稻草人”，触犯法律底线就要受到追究。 坚持从自我做起，形成底线私我，严守法律底线，带头遵守法律。"},{"id":"e4","type":"essay","question":"联系我国实际，说明社会主义法律的本质特征。","answer":"我国社会主义法律，是在中国共产党领导的新民主主义革命时期孕育，在社会主义制度建立后确立并在社会主义建设中不断发展的。我国社会主义法律的本质主要表现在以下几个方面：\n(1)从法律所体现的意志来看，我国社会主义法律是工人阶级领导下的广大人民意志的体现。从本质上说，我国社会主义法律是中国特色社会主义制度的重要组成部分，是党领导人民当家作主的制度保障。我国社会主义法律体现了党的主张和人民意志的统一。党领导人民制定和实施宪法法律，党自身必须在宪法法律范围内活动，这就是党的领导力量的体现，也是我国社会主义法律最本质特征的具体表现。\n(2)从法律的实质内容来看，具有鲜明的科学性和先进性。我国社会主义法律反应全体人民共同意志，与历史发展的基本方向和规律一致，是社会历史发展规律和自然规律的反映。\n(3)从法律的社会作用来看，我国社会主义法律是中国特色社会主义事业顺利发展的有力保障。在经济建设方面、政治建设方面、社会建设方面社会主义法律都发挥着重要的作用。我国法律的社会作用体现了社会主义的本质要求，经济发展、政治清明、文化昌盛、社会公正、生态良好，都离不开社会主义法律的引领、规范和保障。"},{"id":"e5","type":"essay","question":"如何正确理解法律权利与法律义务的关系？","answer":"法律权利与法律义务的关系，不可分割，相互依存。没有权利，义务的设定就失去了目的和根据；没有义务，权利的实现也就成为空话。在社会生活中，每个人既是享受各种法律权利的主体，又是承担各种法律义务的主体。\n（1）法律权利和法律义务的关系有以下几点：\n①二者是相互依存的关系\n法律权利的实现必须以相应法律义务的履行为条件;法律义务的设定和履行也必须以法律权利的行使为根据, 法治社会中不存在没有权利根据的法律义务。\n②二者是目的与手段的关系\n离开了法律权利，法律义务就失去了履行的价值和动力。离开了法律义务，法律权利也形同虚设。\n③二者具有复合性的关系\n即一个行为可以同时是权利行为和义务行为。\n（2）法律权利与法律义务平等，是现代法治的基本原则，是社会公平正义的重要方面。法律权利与法律义务平等表现为法律面前人人平等被确立为基本原则；在法律权利和法律义务的具体设定上要平等；权利与义务的实现要体现平等。\n（3）在法律权利与法律义务相一致的情况下，一个人无论是行使权利还是履行义务，实际上都是对自己有利的。大学生应当正确把握依法行使权利、履行义务的基本要求，既珍惜自己权利又尊重他人权利，既善于行驶权利又自觉履行义务。"}]}</script>
+
+<!-- Toast / Modal 容器 -->
+<div class="toast-wrap" id="toast-wrap"></div>
+<div id="modal-root"></div>
+
+<script>
+// =============================================================
+// 思政刷题 · 报告委员长 - 主程序
+// =============================================================
+"use strict";
+
+const QUESTION_BANK = JSON.parse(document.getElementById('qbank-data').textContent);
+const TYPES = {single:'单选题', multi:'多选题', judge:'判断题', essay:'简答题'};
+const TYPE_ORDER = ['single','multi','judge','essay'];
+const NS = 'mac-quiz-';
+const $ = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+const el = (tag, props={}, ...children) => {
+  const e = document.createElement(tag);
+  for (const k in props) {
+    if (k === 'class') e.className = props[k];
+    else if (k === 'dataset') Object.assign(e.dataset, props[k]);
+    else if (k.startsWith('on') && typeof props[k]==='function') e.addEventListener(k.slice(2).toLowerCase(), props[k]);
+    else if (k === 'html') e.innerHTML = props[k];
+    else e.setAttribute(k, props[k]);
+  }
+  children.flat().forEach(c => {
+    if (c == null) return;
+    e.appendChild(typeof c === 'string' ? document.createTextNode(c) : c);
+  });
+  return e;
+};
+
+// =============================================================
+// DataLayer - localStorage 持久化
+// =============================================================
+const DataLayer = {
+  get(key, fallback=null) {
+    try { const v = localStorage.getItem(NS+key); return v == null ? fallback : JSON.parse(v); }
+    catch(e) { return fallback; }
+  },
+  set(key, value) {
+    try { localStorage.setItem(NS+key, JSON.stringify(value)); return true; }
+    catch(e) { Toast.error('存储空间不足，请导出数据后清理'); return false; }
+  },
+  remove(key) { localStorage.removeItem(NS+key); },
+  loadAll() {
+    return {
+      settings: this.get('settings', {theme:'auto', fsQuizStem:22, bgImage:1, lastConfig:null}),
+      wrongQuestions: this.get('wrongQuestions', {}),
+      activeSession: this.get('activeSession', null),
+      history: this.get('history', []),
+    };
+  }
+};
+
+// =============================================================
+// Store - 简单状态管理
+// =============================================================
+const Store = {
+  state: {},
+  subs: new Set(),
+  init() {
+    this.state = {
+      route: location.hash || '#/home',
+      ...DataLayer.loadAll(),
+      quizSession: null,
+    };
+    this.applyTheme();
+    this.applyFontSize();
+    this.applyBackground();
+  },
+  setState(patch, persistKeys=[]) {
+    Object.assign(this.state, patch);
+    persistKeys.forEach(k => DataLayer.set(k, this.state[k]));
+    this.subs.forEach(fn => fn(this.state));
+  },
+  applyTheme() {
+    const t = this.state.settings?.theme || 'auto';
+    if (t === 'auto') {
+      const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    } else {
+      document.documentElement.dataset.theme = t;
+    }
+  },
+  applyFontSize() {
+    const fs = this.state.settings?.fsQuizStem || 22;
+    document.documentElement.style.setProperty('--fs-quiz-stem', fs+'px');
+  },
+  applyBackground() {
+    const bg = this.state.settings?.bgImage || 1;
+    document.documentElement.style.setProperty('--bg-image', `url("backgrounds/bg-${bg}.jpg")`);
+  },
+  updateSettings(patch) {
+    this.state.settings = {...this.state.settings, ...patch};
+    DataLayer.set('settings', this.state.settings);
+    this.applyTheme();
+    this.applyFontSize();
+    this.applyBackground();
+  }
+};
+
+// =============================================================
+// QuestionBank - 题库访问
+// =============================================================
+const QBank = {
+  total: () => Object.values(QUESTION_BANK).flat().length,
+  countByType: () => {
+    const r = {};
+    TYPE_ORDER.forEach(t => r[t] = (QUESTION_BANK[t] || []).length);
+    return r;
+  },
+  byId(id) {
+    for (const t of TYPE_ORDER) {
+      const q = (QUESTION_BANK[t] || []).find(q => q.id === id);
+      if (q) return q;
+    }
+    return null;
+  },
+  filter(types) { return types.flatMap(t => QUESTION_BANK[t] || []); },
+};
+
+// =============================================================
+// QuizEngine - 会话生成、判分
+// =============================================================
+const QuizEngine = {
+  shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length-1; i > 0; i--) {
+      const j = Math.floor((performance.now()*1000 + i) % (i+1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  },
+  create(config) {
+    let pool;
+    if (config.onlyWrong) {
+      const wrongIds = Object.keys(Store.state.wrongQuestions || {});
+      pool = wrongIds.map(id => QBank.byId(id)).filter(q => q && config.types.includes(q.type));
+    } else {
+      pool = QBank.filter(config.types);
+    }
+    if (config.order === 'random') pool = this.shuffle(pool);
+    const n = config.count === 0 ? pool.length : Math.min(config.count, pool.length);
+    return {
+      id: 'sess_'+Date.now().toString(36),
+      config,
+      questions: pool.slice(0, n),
+      answers: {},
+      currentIdx: 0,
+      startedAt: Date.now(),
+      finishedAt: null,
+    };
+  },
+  check(question, userAnswer) {
+    if (question.type === 'single' || question.type === 'judge') {
+      return userAnswer === question.answer;
+    }
+    if (question.type === 'multi') {
+      const u = Array.isArray(userAnswer) ? [...userAnswer].sort().join('') : (userAnswer || '');
+      return u === question.answer;
+    }
+    return userAnswer === true;
+  },
+  submit(session, userAnswer) {
+    const q = session.questions[session.currentIdx];
+    const ok = this.check(q, userAnswer);
+    session.answers[q.id] = { user: userAnswer, correct: ok, ts: Date.now() };
+    if (!ok) WrongStore.record(q);
+    else if (session.config.skipCorrect) WrongStore.removeIfPresent(q.id);
+    DataLayer.set('activeSession', session);
+    return ok;
+  },
+  next(session) {
+    if (session.currentIdx < session.questions.length - 1) {
+      session.currentIdx++;
+      DataLayer.set('activeSession', session);
+      return true;
+    }
+    return false;
+  },
+  finish(session) {
+    session.finishedAt = Date.now();
+    const total = session.questions.length;
+    const correct = Object.values(session.answers).filter(a => a.correct).length;
+    const rate = total ? Math.round((correct/total)*100) : 0;
+    const byType = {};
+    TYPE_ORDER.forEach(t => byType[t] = {total:0, correct:0});
+    session.questions.forEach(q => {
+      byType[q.type].total++;
+      if (session.answers[q.id]?.correct) byType[q.type].correct++;
+    });
+    const record = {
+      id: session.id,
+      startedAt: session.startedAt,
+      finishedAt: session.finishedAt,
+      total, correct, rate, byType,
+      config: session.config,
+    };
+    const history = [...(Store.state.history || []), record].slice(-50);
+    Store.setState({history, activeSession:null}, ['history']);
+    DataLayer.remove('activeSession');
+    return record;
+  }
+};
+
+// =============================================================
+// WrongStore - 错题集
+// =============================================================
+const WrongStore = {
+  record(q) {
+    const wq = Store.state.wrongQuestions || {};
+    const ex = wq[q.id];
+    wq[q.id] = {
+      id: q.id, type: q.type,
+      times: (ex?.times || 0) + 1,
+      lastAt: Date.now(),
+      firstAt: ex?.firstAt || Date.now(),
+    };
+    Store.setState({wrongQuestions: wq}, ['wrongQuestions']);
+  },
+  removeIfPresent(id) {
+    const wq = Store.state.wrongQuestions || {};
+    if (wq[id]) {
+      delete wq[id];
+      Store.setState({wrongQuestions: wq}, ['wrongQuestions']);
+      return true;
+    }
+    return false;
+  },
+  clear() {
+    Store.setState({wrongQuestions: {}}, ['wrongQuestions']);
+  },
+  list(filterType) {
+    const wq = Store.state.wrongQuestions || {};
+    let arr = Object.values(wq);
+    if (filterType && filterType !== 'all') arr = arr.filter(w => w.type === filterType);
+    return arr.sort((a,b) => b.lastAt - a.lastAt);
+  },
+  countByType() {
+    const wq = Store.state.wrongQuestions || {};
+    const r = {all:0};
+    TYPE_ORDER.forEach(t => r[t]=0);
+    Object.values(wq).forEach(w => { r.all++; if (r[w.type]!=null) r[w.type]++; });
+    return r;
+  }
+};
+
+// =============================================================
+// StatsCalc - 统计计算
+// =============================================================
+const StatsCalc = {
+  overall() {
+    const h = Store.state.history || [];
+    if (!h.length) return {totalSessions:0, totalQ:0, totalCorrect:0, rate:0, wrongCount:0, wrongRate:0};
+    const totalQ = h.reduce((s,r) => s+r.total, 0);
+    const totalCorrect = h.reduce((s,r) => s+r.correct, 0);
+    const rate = totalQ ? Math.round((totalCorrect/totalQ)*100) : 0;
+    const wrongCount = Object.keys(Store.state.wrongQuestions||{}).length;
+    const wrongRate = totalQ ? Math.round((wrongCount/QBank.total())*100) : 0;
+    return {totalSessions:h.length, totalQ, totalCorrect, rate, wrongCount, wrongRate};
+  },
+  byType() {
+    const h = Store.state.history || [];
+    const r = {};
+    TYPE_ORDER.forEach(t => r[t] = {total:0, correct:0});
+    h.forEach(rec => {
+      TYPE_ORDER.forEach(t => {
+        r[t].total += rec.byType[t]?.total || 0;
+        r[t].correct += rec.byType[t]?.correct || 0;
+      });
+    });
+    return r;
+  },
+  recent(n=7) {
+    return (Store.state.history || []).slice(-n).map(r => ({
+      date: new Date(r.finishedAt).toLocaleDateString('zh-CN', {month:'2-digit', day:'2-digit'}),
+      rate: r.rate,
+    }));
+  }
+};
+
+// =============================================================
+// Toast 通知
+// =============================================================
+const Toast = {
+  show(msg, type='info', dur=2400) {
+    const wrap = $('#toast-wrap');
+    const t = el('div', {class:'toast '+type}, msg);
+    wrap.appendChild(t);
+    setTimeout(() => { t.style.opacity='0'; t.style.transform='translateY(-12px)'; setTimeout(()=>t.remove(), 300); }, dur);
+  },
+  success(m){this.show(m,'success')},
+  error(m){this.show(m,'error',3600)},
+  warn(m){this.show(m,'warn',3000)},
+};
+
+// =============================================================
+// Modal 模态
+// =============================================================
+const Modal = {
+  show({title, body, actions}) {
+    const root = $('#modal-root');
+    root.innerHTML = '';
+    const backdrop = el('div', {class:'modal-backdrop'});
+    const card = el('div', {class:'modal-card glass-window'});
+    card.appendChild(el('h3', {}, title));
+    card.appendChild(el('p', {}, body));
+    const actWrap = el('div', {class:'modal-actions'});
+    actions.forEach(a => {
+      const b = el('button', {class:'glass-btn '+(a.kind||''), onclick: () => { backdrop.remove(); a.onClick && a.onClick(); }}, a.label);
+      actWrap.appendChild(b);
+    });
+    card.appendChild(actWrap);
+    backdrop.appendChild(card);
+    backdrop.addEventListener('click', (e) => { if (e.target === backdrop) backdrop.remove(); });
+    root.appendChild(backdrop);
+  }
+};
+
+// =============================================================
+// Router
+// =============================================================
+const Router = {
+  routes: {},
+  on(hash, fn) { this.routes[hash.replace(/\?.*$/,'')] = fn; },
+  start() {
+    addEventListener('hashchange', () => this.handle());
+    if (!location.hash) location.hash = '#/home';
+    else this.handle();
+  },
+  handle() {
+    const full = location.hash || '#/home';
+    const [path, qs] = full.split('?');
+    const params = {};
+    if (qs) qs.split('&').forEach(kv => { const [k,v]=kv.split('='); params[k]=decodeURIComponent(v||''); });
+    Store.setState({route: full});
+    const fn = this.routes[path] || this.routes['#/home'];
+    fn(params);
+  },
+  go(hash) { location.hash = hash; }
+};
+
+// =============================================================
+// UI Renderers
+// =============================================================
+const UI = {
+  tpl(id) { return $('#'+id).content.cloneNode(true); },
+  mount(node) {
+    const body = $('#app-body');
+    body.innerHTML = '';
+    body.appendChild(node);
+    body.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => Router.go(b.dataset.go)));
+  },
+
+  renderHome() {
+    const f = this.tpl('tpl-home');
+    const wq = WrongStore.countByType();
+    f.querySelector('#home-wrong-meta').textContent = wq.all ? `共 ${wq.all} 题待复习` : '暂无错题，继续保持';
+    const stats = StatsCalc.overall();
+    f.querySelector('#home-stats-meta').textContent = stats.totalSessions ? `${stats.totalSessions} 次 · 正确率 ${stats.rate}%` : '未开始';
+    // resume banner
+    const session = DataLayer.get('activeSession');
+    if (session && session.questions && session.currentIdx < session.questions.length) {
+      const banner = el('div', {class:'resume-banner liquid'});
+      banner.appendChild(el('div', {class:'resume-banner-text'}, `⏯ 上次未完成会话 (已答 ${Object.keys(session.answers).length}/${session.questions.length})，是否继续？`));
+      const acts = el('div', {class:'resume-banner-actions'});
+      acts.appendChild(el('button', {class:'glass-btn primary', onclick: () => { Store.setState({quizSession: session}); Router.go('#/quiz'); }}, '继续'));
+      acts.appendChild(el('button', {class:'glass-btn', onclick: () => { DataLayer.remove('activeSession'); banner.remove(); }}, '放弃'));
+      banner.appendChild(acts);
+      f.querySelector('#resume-slot').appendChild(banner);
+    }
+    this.mount(f);
+  },
+
+  renderQuizSetup() {
+    const f = this.tpl('tpl-quiz-setup');
+    const counts = QBank.countByType();
+    const last = Store.state.settings?.lastConfig || {types:['single','judge'], count:20, order:'sequence', onlyWrong:false, skipCorrect:true};
+    const config = {...last};
+    const grid = f.querySelector('#type-grid');
+    TYPE_ORDER.forEach(t => {
+      const card = el('label', {class:'type-choice liquid'+(config.types.includes(t)?' selected':'')});
+      const cb = el('input', {type:'checkbox', value:t});
+      cb.checked = config.types.includes(t);
+      card.appendChild(cb);
+      card.appendChild(el('span', {class:'tc-label'}, TYPES[t]));
+      card.appendChild(el('span', {class:'tc-count'}, counts[t]+''));
+      cb.addEventListener('change', () => {
+        if (cb.checked) { if (!config.types.includes(t)) config.types.push(t); }
+        else config.types = config.types.filter(x => x !== t);
+        card.classList.toggle('selected', cb.checked);
+        updatePreview();
+      });
+      grid.appendChild(card);
+    });
+    // preview (必须在 setCount 之前声明, 因为 setCount → updatePreview → previewNum/btnStart)
+    const previewNum = f.querySelector('#preview-num');
+    const btnStart = f.querySelector('#btn-start-quiz');
+    function updatePreview() {
+      const poolSize = config.onlyWrong
+        ? WrongStore.list().filter(w => config.types.includes(w.type)).length
+        : config.types.reduce((s,t) => s + counts[t], 0);
+      const n = config.count === 0 ? poolSize : Math.min(config.count, poolSize);
+      previewNum.textContent = n;
+      btnStart.disabled = n === 0 || config.types.length === 0;
+    }
+    // count presets + slider
+    const slider = f.querySelector('#count-slider');
+    const cv = f.querySelector('#count-value');
+    const presets = f.querySelectorAll('.count-preset');
+    const setCount = (n) => {
+      config.count = n;
+      slider.value = n === 0 ? slider.max : n;
+      cv.textContent = n === 0 ? '全部' : n;
+      presets.forEach(p => p.classList.toggle('selected', +p.dataset.count === n));
+      updatePreview();
+    };
+    presets.forEach(p => p.addEventListener('click', () => setCount(+p.dataset.count)));
+    slider.addEventListener('input', () => {
+      config.count = +slider.value;
+      cv.textContent = slider.value;
+      presets.forEach(p => p.classList.remove('selected'));
+      updatePreview();
+    });
+    setCount(config.count);
+    // order
+    const orderSeg = f.querySelector('#order-seg');
+    orderSeg.querySelectorAll('.seg-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.order === config.order);
+      b.addEventListener('click', () => {
+        config.order = b.dataset.order;
+        orderSeg.querySelectorAll('.seg-btn').forEach(x => x.classList.toggle('active', x === b));
+      });
+    });
+    // switches
+    const ow = f.querySelector('#only-wrong'); ow.checked = config.onlyWrong;
+    ow.addEventListener('change', () => { config.onlyWrong = ow.checked; updatePreview(); });
+    const sc = f.querySelector('#skip-correct'); sc.checked = config.skipCorrect;
+    sc.addEventListener('change', () => { config.skipCorrect = sc.checked; });
+    btnStart.addEventListener('click', () => {
+      const session = QuizEngine.create(config);
+      if (!session.questions.length) { Toast.warn('题库为空，请调整配置'); return; }
+      Store.updateSettings({lastConfig: config});
+      Store.setState({quizSession: session});
+      DataLayer.set('activeSession', session);
+      Router.go('#/quiz');
+    });
+    this.mount(f);
+  },
+
+  renderQuiz() {
+    let session = Store.state.quizSession || DataLayer.get('activeSession');
+    if (!session) { Router.go('#/quiz-setup'); return; }
+    Store.state.quizSession = session;
+    const f = this.tpl('tpl-quiz');
+    this.mount(f);
+    this.renderQuizQuestion();
+  },
+
+  renderQuizQuestion() {
+    const session = Store.state.quizSession;
+    if (!session) return;
+    if (session.currentIdx >= session.questions.length) { this.renderResult(); return; }
+    const q = session.questions[session.currentIdx];
+    const total = session.questions.length;
+    $('#q-counter').textContent = `${session.currentIdx+1} / ${total}`;
+    $('#q-progress').style.width = (((session.currentIdx)/total)*100)+'%';
+    const main = $('#quiz-main');
+    main.innerHTML = '';
+    const answered = session.answers[q.id];
+    // meta
+    const meta = el('div', {class:'q-meta'});
+    meta.appendChild(el('span', {class:'pill-badge'}, `${TYPES[q.type]} · 第 ${session.currentIdx+1} 题`));
+    main.appendChild(meta);
+    // stem card
+    const stem = el('div', {class:'q-stem-card glass-card'});
+    stem.appendChild(el('div', {class:'q-stem'}, q.question));
+    main.appendChild(stem);
+    // options
+    const state = { selected: answered ? answered.user : (q.type === 'multi' ? [] : null), locked: !!answered };
+    if (q.type === 'single' || q.type === 'multi') {
+      const list = el('div', {class:'opt-list'});
+      ['A','B','C','D'].forEach(k => {
+        if (!q.options || !q.options[k]) return;
+        const card = el('button', {class:'opt-card liquid'});
+        const letter = el('div', {class:'opt-letter'}, k);
+        const body = el('div', {class:'opt-body'}, q.options[k]);
+        card.appendChild(letter); card.appendChild(body);
+        const updateCardClass = () => {
+          card.className = 'opt-card';
+          if (state.locked) card.classList.add('locked');
+          if (q.type === 'multi') {
+            if (state.selected.includes(k)) card.classList.add('selected');
+          } else {
+            if (state.selected === k) card.classList.add('selected');
+          }
+          if (state.locked) {
+            const ans = q.answer;
+            const isCorrectOpt = (q.type==='multi' ? ans.includes(k) : ans===k);
+            const userChose = (q.type==='multi' ? state.selected.includes(k) : state.selected===k);
+            if (isCorrectOpt) card.classList.add('correct');
+            else if (userChose) card.classList.add('wrong');
+          }
+        };
+        card.addEventListener('click', () => {
+          if (state.locked) return;
+          if (q.type === 'single') {
+            state.selected = k;
+            list.querySelectorAll('.opt-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            this.submitAnswer(state.selected);
+          } else {
+            const i = state.selected.indexOf(k);
+            if (i >= 0) state.selected.splice(i,1); else state.selected.push(k);
+            updateCardClass();
+            multiSubmitBtn.disabled = state.selected.length === 0;
+          }
+        });
+        updateCardClass();
+        list.appendChild(card);
+      });
+      main.appendChild(list);
+      let multiSubmitBtn = null;
+      if (q.type === 'multi' && !state.locked) {
+        multiSubmitBtn = el('button', {class:'glass-btn primary large'}, '提交答案');
+        multiSubmitBtn.disabled = true;
+        multiSubmitBtn.addEventListener('click', () => this.submitAnswer([...state.selected].sort().join('')));
+        main.appendChild(el('div', {class:'row', style:'justify-content:center;margin-bottom:16px'}, multiSubmitBtn));
+      }
+    } else if (q.type === 'judge') {
+      const pair = el('div', {class:'judge-pair'});
+      ['Y','N'].forEach(k => {
+        const btn = el('button', {class:'judge-btn liquid '+ (k==='Y'?'y':'n')}, k==='Y' ? '✓ 正确' : '✗ 错误');
+        if (state.locked) {
+          btn.classList.add('locked');
+          if (q.answer === k) btn.classList.add('correct');
+          else if (state.selected === k) btn.classList.add('wrong');
+        }
+        btn.addEventListener('click', () => {
+          if (state.locked) return;
+          this.submitAnswer(k);
+        });
+        pair.appendChild(btn);
+      });
+      main.appendChild(pair);
+    } else if (q.type === 'essay') {
+      const ta = el('textarea', {class:'essay-area', placeholder:'请在此输入你的答案...（简答题为自评模式）'});
+      if (answered && answered.userText) ta.value = answered.userText;
+      ta.disabled = state.locked;
+      main.appendChild(ta);
+      const refCard = el('div', {class:'essay-ref hidden'});
+      refCard.appendChild(el('h4', {}, '参考答案'));
+      refCard.appendChild(el('div', {}, q.answer));
+      main.appendChild(refCard);
+      const judgeWrap = el('div', {class:'essay-self-judge hidden'});
+      const showRefBtn = el('button', {class:'glass-btn primary'}, '查看参考答案');
+      showRefBtn.addEventListener('click', () => {
+        refCard.classList.remove('hidden');
+        judgeWrap.classList.remove('hidden');
+        showRefBtn.remove();
+      });
+      judgeWrap.appendChild(el('button', {class:'glass-btn primary', onclick: () => this.submitEssay(q, ta.value, true)}, '我答对了'));
+      judgeWrap.appendChild(el('button', {class:'glass-btn danger', onclick: () => this.submitEssay(q, ta.value, false)}, '我答错了'));
+      main.appendChild(el('div', {class:'row mt-4', style:'justify-content:center'}, showRefBtn));
+      main.appendChild(judgeWrap);
+      if (state.locked) { refCard.classList.remove('hidden'); showRefBtn.remove(); }
+    }
+    // feedback (if answered)
+    if (answered) this.renderFeedback(q, answered);
+    // bottom actions
+    const actions = el('div', {class:'quiz-actions'});
+    const exitBtn = el('button', {class:'glass-btn', onclick: () => this.exitQuiz()}, '保存并退出');
+    actions.appendChild(exitBtn);
+    if (answered) {
+      const isLast = session.currentIdx === session.questions.length - 1;
+      const nextBtn = el('button', {class:'glass-btn primary large', onclick: () => {
+        if (isLast) this.renderResult();
+        else { QuizEngine.next(session); this.renderQuizQuestion(); }
+      }}, isLast ? '查看成绩 →' : '下一题 →');
+      actions.appendChild(nextBtn);
+    } else {
+      actions.appendChild(el('button', {class:'glass-btn', onclick: () => { QuizEngine.submit(session, q.type==='multi'?'':null); QuizEngine.next(session); this.renderQuizQuestion(); }}, '跳过 →'));
+    }
+    main.appendChild(actions);
+    $('#btn-quiz-exit').onclick = () => this.exitQuiz();
+    // 答题后自动滚动到反馈+下一题, 并聚焦"下一题"按钮(Enter可直接进入下一题)
+    if (answered) {
+      const nextBtn = actions.querySelector('.glass-btn.primary');
+      requestAnimationFrame(() => {
+        (nextBtn || actions).scrollIntoView({behavior:'smooth', block:'center'});
+        if (nextBtn) nextBtn.focus({preventScroll:true});
+      });
+    }
+  },
+
+  submitAnswer(userAnswer) {
+    const session = Store.state.quizSession;
+    QuizEngine.submit(session, userAnswer);
+    this.renderQuizQuestion();
+  },
+
+  submitEssay(q, text, selfCorrect) {
+    const session = Store.state.quizSession;
+    session.answers[q.id] = { user: selfCorrect, userText: text, correct: selfCorrect, ts: Date.now() };
+    if (!selfCorrect) WrongStore.record(q);
+    else if (session.config.skipCorrect) WrongStore.removeIfPresent(q.id);
+    DataLayer.set('activeSession', session);
+    this.renderQuizQuestion();
+  },
+
+  renderFeedback(q, answered) {
+    const main = $('#quiz-main');
+    const card = el('div', {class:'feedback-card '+(answered.correct ? 'correct' : 'wrong')});
+    card.appendChild(el('div', {class:'fb-title'}, answered.correct ? '✓ 答对了' : '✗ 答错了'));
+    if (q.type !== 'essay') {
+      const ansText = el('div', {class:'fb-body'});
+      ansText.innerHTML = `正确答案：<strong>${q.type==='judge' ? (q.answer==='Y'?'正确':'错误') : q.answer}</strong>`;
+      card.appendChild(ansText);
+    }
+    main.appendChild(card);
+  },
+
+  exitQuiz() {
+    Modal.show({
+      title: '保存进度并退出？',
+      body: '当前进度已自动保存，下次进入首页可以从断点继续。',
+      actions: [
+        {label:'取消', kind:''},
+        {label:'退出', kind:'primary', onClick: () => Router.go('#/home')}
+      ]
+    });
+  },
+
+  renderResult() {
+    const session = Store.state.quizSession;
+    if (!session) { Router.go('#/home'); return; }
+    const record = QuizEngine.finish(session);
+    const f = this.tpl('tpl-result');
+    f.querySelector('#res-rate').textContent = record.rate + '%';
+    f.querySelector('#res-right').textContent = record.correct;
+    f.querySelector('#res-wrong').textContent = record.total - record.correct;
+    const pt = f.querySelector('#res-pertype');
+    pt.appendChild(el('h3', {style:'font-size:var(--fs-h3);font-weight:600;margin-bottom:16px;text-align:left'}, '按题型分布'));
+    TYPE_ORDER.forEach(t => {
+      const data = record.byType[t];
+      if (!data.total) return;
+      const row = el('div', {class:'pt-row'});
+      row.appendChild(el('div', {class:'pt-label'}, TYPES[t]));
+      const track = el('div', {class:'pt-track'});
+      const fill = el('div', {class:'pt-fill'});
+      track.appendChild(fill);
+      row.appendChild(track);
+      row.appendChild(el('div', {class:'pt-num'}, `${data.correct}/${data.total}`));
+      pt.appendChild(row);
+      requestAnimationFrame(() => fill.style.width = (data.total ? (data.correct/data.total*100) : 0) + '%');
+    });
+    this.mount(f);
+    $('#btn-retry').addEventListener('click', () => {
+      const session2 = QuizEngine.create(record.config);
+      Store.setState({quizSession: session2});
+      DataLayer.set('activeSession', session2);
+      Router.go('#/quiz');
+    });
+  },
+
+  renderWrong(params={}) {
+    const f = this.tpl('tpl-wrong');
+    const activeType = params.type || 'all';
+    const counts = WrongStore.countByType();
+    f.querySelector('#wrong-count').textContent = `我的错题集 (${counts.all} 题)`;
+    const sb = f.querySelector('#wrong-sidebar');
+    sb.appendChild(el('h4', {}, '题型筛选'));
+    const items = [{key:'all', label:'全部'}, ...TYPE_ORDER.map(t => ({key:t, label:TYPES[t]}))];
+    items.forEach(it => {
+      const c = counts[it.key] || 0;
+      const node = el('div', {class:'ws-item'+(it.key===activeType?' active':'')});
+      node.appendChild(el('span', {}, it.label));
+      node.appendChild(el('span', {class:'ws-count'}, c+''));
+      node.addEventListener('click', () => Router.go('#/wrong?type='+it.key));
+      sb.appendChild(node);
+    });
+    const list = f.querySelector('#wrong-list');
+    const arr = WrongStore.list(activeType);
+    if (!arr.length) {
+      list.appendChild(el('div', {class:'empty-state'},
+        el('div', {class:'empty-icon'}, '✨'),
+        el('div', {class:'empty-title'}, '暂无错题'),
+        el('div', {}, '继续保持，错题都已被你攻克')
+      ));
+    } else {
+      arr.forEach(w => {
+        const q = QBank.byId(w.id); if (!q) return;
+        const card = el('button', {class:'wq-item liquid', onclick: () => UI.practiceWrong(w.id)});
+        const body = el('div', {class:'wq-body'});
+        const head = el('div', {class:'wq-head'});
+        head.appendChild(el('span', {class:'pill-badge'}, TYPES[q.type]));
+        head.appendChild(el('span', {style:'color:var(--color-text-tertiary);font-size:var(--fs-caption)'}, `错 ${w.times} 次`));
+        body.appendChild(head);
+        body.appendChild(el('div', {class:'wq-stem'}, q.question));
+        body.appendChild(el('div', {class:'wq-meta'},
+          el('span', {}, '上次错误：'+new Date(w.lastAt).toLocaleString('zh-CN')),
+        ));
+        const del = el('button', {class:'glass-btn', onclick: (e) => { e.stopPropagation(); WrongStore.removeIfPresent(w.id); UI.renderWrong({type:activeType}); }}, '移除');
+        card.appendChild(body);
+        card.appendChild(del);
+        list.appendChild(card);
+      });
+    }
+    this.mount(f);
+    $('#btn-wrong-clear').onclick = () => {
+      if (!counts.all) { Toast.warn('错题集已是空的'); return; }
+      Modal.show({
+        title:'清空所有错题？',
+        body:`共 ${counts.all} 道错题将被永久删除，无法恢复。`,
+        actions:[{label:'取消'},{label:'确认清空', kind:'danger', onClick:()=>{ WrongStore.clear(); UI.renderWrong(); Toast.success('错题集已清空'); }}]
+      });
+    };
+    $('#btn-wrong-repractice').onclick = () => {
+      const wrongList = WrongStore.list(activeType);
+      if (!wrongList.length) { Toast.warn('没有可练习的错题'); return; }
+      const types = activeType === 'all' ? TYPE_ORDER : [activeType];
+      const session = QuizEngine.create({types, count:0, order:'random', onlyWrong:true, skipCorrect:true});
+      Store.setState({quizSession: session});
+      DataLayer.set('activeSession', session);
+      Router.go('#/quiz');
+    };
+  },
+
+  practiceWrong(id) {
+    const q = QBank.byId(id); if (!q) return;
+    const session = {
+      id: 'practice_'+Date.now().toString(36),
+      config: {types:[q.type], count:1, order:'sequence', onlyWrong:true, skipCorrect:true},
+      questions: [q],
+      answers: {},
+      currentIdx: 0,
+      startedAt: Date.now(),
+      finishedAt: null,
+    };
+    Store.setState({quizSession: session});
+    DataLayer.set('activeSession', session);
+    Router.go('#/quiz');
+  },
+
+  renderStats() {
+    const f = this.tpl('tpl-stats');
+    const main = f.querySelector('#stats-main');
+    const ov = StatsCalc.overall();
+    // KPI
+    const kpi = el('div', {class:'kpi-grid'});
+    const mk = (label, num, cls='') => {
+      const c = el('div', {class:'kpi-card glass-card'});
+      c.appendChild(el('div', {class:'kpi-label'}, label));
+      c.appendChild(el('div', {class:'kpi-num '+cls}, num));
+      return c;
+    };
+    kpi.appendChild(mk('总刷题数', ov.totalQ+''));
+    kpi.appendChild(mk('总正确率', ov.rate+'%', 'accent'));
+    kpi.appendChild(mk('错题数', ov.wrongCount+'', 'warn'));
+    kpi.appendChild(mk('错题率', ov.wrongRate+'%', 'danger'));
+    main.appendChild(kpi);
+    // charts
+    const charts = el('div', {class:'charts-row'});
+    // pie
+    const pieCard = el('div', {class:'chart-card glass-card'});
+    pieCard.appendChild(el('h3', {}, '按题型分布'));
+    const byType = StatsCalc.byType();
+    const totalByType = TYPE_ORDER.reduce((s,t) => s+byType[t].total, 0);
+    if (totalByType === 0) {
+      pieCard.appendChild(el('div', {class:'empty-chart'}, '尚无数据，先去刷一轮吧'));
+    } else {
+      const colors = {single:'#007AFF', multi:'#8B5CF6', judge:'#34C759', essay:'#FF9500'};
+      let acc = 0;
+      const gradStops = TYPE_ORDER.map(t => {
+        const pct = (byType[t].total/totalByType)*100;
+        const seg = `${colors[t]} ${acc}% ${acc+pct}%`;
+        acc += pct;
+        return seg;
+      }).join(', ');
+      const pieWrap = el('div', {class:'pie-wrap'});
+      const pie = el('div', {style:`width:140px;height:140px;border-radius:50%;background:conic-gradient(${gradStops});box-shadow:inset 0 0 0 4px rgba(255,255,255,0.5),var(--shadow-md)`});
+      pieWrap.appendChild(pie);
+      const legend = el('div', {class:'pie-legend'});
+      TYPE_ORDER.forEach(t => {
+        if (byType[t].total === 0) return;
+        const pct = Math.round((byType[t].total/totalByType)*100);
+        const li = el('div', {class:'legend-item'});
+        li.appendChild(el('span', {class:'legend-dot', style:'background:'+colors[t]}));
+        li.appendChild(el('span', {}, `${TYPES[t]} ${pct}%`));
+        legend.appendChild(li);
+      });
+      pieWrap.appendChild(legend);
+      pieCard.appendChild(pieWrap);
+    }
+    charts.appendChild(pieCard);
+    // line
+    const lineCard = el('div', {class:'chart-card glass-card'});
+    lineCard.appendChild(el('h3', {}, '近期会话正确率'));
+    const recent = StatsCalc.recent(7);
+    if (!recent.length) {
+      lineCard.appendChild(el('div', {class:'empty-chart'}, '暂无历史会话'));
+    } else {
+      const w = 320, h = 180, pad = 30;
+      const xs = (i) => pad + i*((w-pad*2)/Math.max(1, recent.length-1));
+      const ys = (v) => h - pad - (v/100)*(h-pad*2);
+      const points = recent.map((r,i) => `${xs(i)},${ys(r.rate)}`).join(' ');
+      const svg = `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+        <line x1="${pad}" y1="${h-pad}" x2="${w-pad}" y2="${h-pad}" stroke="rgba(120,120,128,0.3)" stroke-width="1"/>
+        <line x1="${pad}" y1="${pad}" x2="${pad}" y2="${h-pad}" stroke="rgba(120,120,128,0.3)" stroke-width="1"/>
+        <polyline fill="none" stroke="var(--color-accent)" stroke-width="2.5" points="${points}"/>
+        ${recent.map((r,i)=>`<circle cx="${xs(i)}" cy="${ys(r.rate)}" r="4" fill="var(--color-accent)"><title>${r.date}: ${r.rate}%</title></circle>`).join('')}
+        ${recent.map((r,i)=>`<text x="${xs(i)}" y="${h-pad+16}" text-anchor="middle" font-size="10" fill="var(--color-text-secondary)">${r.date}</text>`).join('')}
+      </svg>`;
+      const wrap = el('div', {class:'line-chart-wrap'});
+      wrap.innerHTML = svg;
+      lineCard.appendChild(wrap);
+    }
+    charts.appendChild(lineCard);
+    main.appendChild(charts);
+    // per-type accuracy bars
+    if (totalByType > 0) {
+      const bars = el('div', {class:'per-type-bars glass-card'});
+      bars.appendChild(el('h3', {style:'font-size:var(--fs-h3);font-weight:600;margin-bottom:16px'}, '各题型正确率'));
+      TYPE_ORDER.forEach(t => {
+        if (byType[t].total === 0) return;
+        const row = el('div', {class:'pt-row'});
+        const rate = Math.round((byType[t].correct/byType[t].total)*100);
+        row.appendChild(el('div', {class:'pt-label'}, TYPES[t]));
+        const track = el('div', {class:'pt-track'});
+        const fill = el('div', {class:'pt-fill', style:'width:'+rate+'%'});
+        track.appendChild(fill);
+        row.appendChild(track);
+        row.appendChild(el('div', {class:'pt-num'}, rate+'%'));
+        bars.appendChild(row);
+      });
+      main.appendChild(bars);
+    }
+    this.mount(f);
+  },
+
+  renderSettings() {
+    const f = this.tpl('tpl-settings');
+    const cur = Store.state.settings?.theme || 'auto';
+    f.querySelectorAll('#theme-seg .seg-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.theme === cur);
+      b.addEventListener('click', () => {
+        Store.updateSettings({theme: b.dataset.theme});
+        f.querySelectorAll('#theme-seg .seg-btn').forEach(x => x.classList.toggle('active', x === b));
+        Toast.success('主题已切换');
+      });
+    });
+    const fsSlider = f.querySelector('#fs-slider');
+    const fsVal = f.querySelector('#fs-val');
+    fsSlider.value = Store.state.settings?.fsQuizStem || 22;
+    fsVal.textContent = fsSlider.value;
+    fsSlider.addEventListener('input', () => {
+      fsVal.textContent = fsSlider.value;
+      Store.updateSettings({fsQuizStem: +fsSlider.value});
+    });
+    // background picker
+    const curBg = Store.state.settings?.bgImage || 1;
+    f.querySelectorAll('.bg-thumb').forEach(b => {
+      b.classList.toggle('active', +b.dataset.bg === curBg);
+      b.addEventListener('click', () => {
+        const bg = +b.dataset.bg;
+        Store.updateSettings({bgImage: bg});
+        f.querySelectorAll('.bg-thumb').forEach(x => x.classList.toggle('active', x === b));
+        Toast.success('背景已切换');
+      });
+    });
+    f.querySelector('#btn-export').addEventListener('click', () => this.exportData());
+    f.querySelector('#btn-import').addEventListener('click', () => $('#import-file').click());
+    f.querySelector('#import-file').addEventListener('change', (e) => this.importData(e.target.files[0]));
+    f.querySelector('#btn-clear-data').addEventListener('click', () => {
+      Modal.show({
+        title:'清空所有数据？',
+        body:'错题集、统计历史、设置、刷题进度全部会被删除，且无法恢复。',
+        actions:[
+          {label:'取消'},
+          {label:'确认清空', kind:'danger', onClick: () => {
+            ['settings','wrongQuestions','activeSession','history'].forEach(k => DataLayer.remove(k));
+            Store.init(); Router.go('#/home'); Toast.success('所有数据已清空');
+          }}
+        ]
+      });
+    });
+    this.mount(f);
+  },
+
+  exportData() {
+    const data = {
+      app: 'mac-quiz', version: 1, exportedAt: Date.now(),
+      ...DataLayer.loadAll()
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `mac-quiz-backup-${new Date().toISOString().slice(0,10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    Toast.success('数据已导出');
+  },
+
+  importData(file) {
+    if (!file) return;
+    const r = new FileReader();
+    r.onload = () => {
+      try {
+        const data = JSON.parse(r.result);
+        if (data.app !== 'mac-quiz') { Toast.error('文件格式不正确'); return; }
+        Modal.show({
+          title:'导入将覆盖当前数据',
+          body:'确定要用备份文件覆盖错题集、统计与设置吗？',
+          actions:[
+            {label:'取消'},
+            {label:'覆盖导入', kind:'primary', onClick: () => {
+              ['settings','wrongQuestions','activeSession','history'].forEach(k => {
+                if (data[k] !== undefined) DataLayer.set(k, data[k]);
+              });
+              Store.init(); Router.go('#/home'); Toast.success('导入完成');
+            }}
+          ]
+        });
+      } catch(e) { Toast.error('JSON 解析失败：'+e.message); }
+    };
+    r.readAsText(file);
+  }
+};
+
+// =============================================================
+// Keyboard - 快捷键
+// =============================================================
+const Keyboard = {
+  init() {
+    addEventListener('keydown', (e) => {
+      const tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'textarea' || tag === 'input') return;
+      const isMac = navigator.platform.toLowerCase().includes('mac');
+      const cmd = isMac ? e.metaKey : e.ctrlKey;
+      if (e.key === 'Escape') {
+        const mb = $('.modal-backdrop'); if (mb) mb.remove();
+        return;
+      }
+      if (cmd && /^[1-5]$/.test(e.key)) {
+        e.preventDefault();
+        const routes = ['#/home','#/quiz-setup','#/wrong','#/stats','#/settings'];
+        Router.go(routes[+e.key - 1]);
+        return;
+      }
+      // 刷题快捷键
+      if (location.hash.startsWith('#/quiz') && !location.hash.startsWith('#/quiz-setup')) {
+        const session = Store.state.quizSession;
+        if (!session) return;
+        const q = session.questions[session.currentIdx];
+        if (!q) return;
+        const answered = session.answers[q.id];
+        if (answered) {
+          if (e.key === 'Enter' || e.key === 'ArrowRight') {
+            const isLast = session.currentIdx === session.questions.length - 1;
+            if (isLast) UI.renderResult();
+            else { QuizEngine.next(session); UI.renderQuizQuestion(); }
+            e.preventDefault();
+          }
+          return;
+        }
+        if ((q.type === 'single' || q.type === 'multi') && /^[1-4]$/.test(e.key)) {
+          const letter = ['A','B','C','D'][+e.key-1];
+          if (q.type === 'single') UI.submitAnswer(letter);
+          else $$('.opt-card')[+e.key-1]?.click();
+          e.preventDefault();
+        }
+        if (q.type === 'judge' && (e.key === 'y' || e.key === 'Y' || e.key === '1')) { UI.submitAnswer('Y'); e.preventDefault(); }
+        if (q.type === 'judge' && (e.key === 'n' || e.key === 'N' || e.key === '0' || e.key === '2')) { UI.submitAnswer('N'); e.preventDefault(); }
+      }
+    });
+  }
+};
+
+// =============================================================
+// 路由注册
+// =============================================================
+Router.on('#/home', () => UI.renderHome());
+Router.on('#/quiz-setup', () => UI.renderQuizSetup());
+Router.on('#/quiz', () => UI.renderQuiz());
+Router.on('#/wrong', (p) => UI.renderWrong(p));
+Router.on('#/stats', () => UI.renderStats());
+Router.on('#/settings', () => UI.renderSettings());
+
+// =============================================================
+// LiquidGlass - 光标跟随流光 (Apple WWDC25 风格)
+// 单一委托监听, rAF 节流, 把光标在 .liquid 元素内的位置写入 --mx/--my
+// =============================================================
+const LiquidGlass = {
+  raf: 0, lastEl: null, lastX: 0, lastY: 0,
+  init() {
+    document.addEventListener('pointermove', (e) => {
+      const el = e.target.closest && e.target.closest('.liquid');
+      this.lastEl = el; this.lastX = e.clientX; this.lastY = e.clientY;
+      if (!this.raf) this.raf = requestAnimationFrame(() => this.flush());
+    }, {passive:true});
+    // 触摸/移动出元素时复位到中心
+    document.addEventListener('pointerleave', () => { this.lastEl = null; }, {passive:true});
+  },
+  flush() {
+    this.raf = 0;
+    const el = this.lastEl;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const mx = ((this.lastX - r.left) / r.width) * 100;
+    const my = ((this.lastY - r.top) / r.height) * 100;
+    el.style.setProperty('--mx', mx.toFixed(1) + '%');
+    el.style.setProperty('--my', my.toFixed(1) + '%');
+  }
+};
+
+// =============================================================
+// 启动
+// =============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  Store.init();
+  Router.start();
+  Keyboard.init();
+  LiquidGlass.init();
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => Store.applyTheme());
+
+  // Traffic light buttons
+  $$('.tl-dot').forEach(b => b.addEventListener('click', () => {
+    const a = b.dataset.action;
+    const app = $('#app');
+    if (a === 'close') Toast.warn('这是网页应用，无法真的关闭 ;)');
+    if (a === 'min') Toast.show('最小化只是一种象征');
+    if (a === 'max') {
+      app.classList.toggle('maximized');
+      if (app.classList.contains('maximized')) { app.style.inset = '0'; app.style.borderRadius = '0'; }
+      else { app.style.inset = ''; app.style.borderRadius = ''; }
+    }
+  }));
+
+  // 主题切换按钮
+  $('#btn-theme').addEventListener('click', () => {
+    const cur = Store.state.settings?.theme || 'auto';
+    const next = cur === 'light' ? 'dark' : cur === 'dark' ? 'auto' : 'light';
+    Store.updateSettings({theme: next});
+    $('#btn-theme').textContent = next === 'dark' ? '🌙' : next === 'light' ? '☀' : '⚙';
+    Toast.show(`已切换为 ${next === 'auto' ? '跟随系统' : next === 'dark' ? '深色' : '浅色'}`);
+  });
+  $('#btn-theme').textContent = (Store.state.settings?.theme === 'dark') ? '🌙' : (Store.state.settings?.theme === 'light') ? '☀' : '⚙';
+
+  // 防止误关
+  addEventListener('beforeunload', (e) => {
+    const session = Store.state.quizSession;
+    if (session && session.currentIdx < session.questions.length - 1) {
+      DataLayer.set('activeSession', session);
+    }
+  });
+});
+</script>
+</body>
+</html>
