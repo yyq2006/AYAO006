@@ -1,0 +1,172 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="静态题库练习网页，支持自定义练习、错题本、保存、提交、成绩报告和导入导出。" />
+    <title>复习01 - 题库练习</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <section class="home-view" id="homeView" aria-label="练习首页">
+        <div class="home-hero">
+          <div>
+            <p class="home-kicker">Question Bank</p>
+            <h1>复习01 题库练习</h1>
+            <p class="home-copy">选择题量、题型、顺序和范围后开始练习。错题会自动收录，也可以手动移除。</p>
+          </div>
+          <div class="home-stats" id="homeStats"></div>
+        </div>
+
+        <div class="setup-grid">
+          <section class="setup-panel">
+            <h2>练习入口</h2>
+            <div class="mode-grid" id="modeGrid">
+              <button class="mode-card is-active" type="button" data-mode="all">
+                <strong>全部题库</strong>
+                <span>按你的设置抽题练习</span>
+              </button>
+              <button class="mode-card" type="button" data-mode="wrong">
+                <strong>错题复习</strong>
+                <span>只练错题本里的题</span>
+              </button>
+              <button class="mode-card" type="button" data-mode="unseen">
+                <strong>未做优先</strong>
+                <span>优先安排没做过的题</span>
+              </button>
+              <button class="mode-card" type="button" data-mode="quick">
+                <strong>快速模式</strong>
+                <span>一次一题，答对自动下一题</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="setup-panel">
+            <h2>做多少题</h2>
+            <div class="quick-row" id="amountGrid">
+              <button class="quick-chip is-active" type="button" data-amount="10">10题</button>
+              <button class="quick-chip" type="button" data-amount="20">20题</button>
+              <button class="quick-chip" type="button" data-amount="50">50题</button>
+              <button class="quick-chip" type="button" data-amount="all">全部</button>
+            </div>
+          </section>
+
+          <section class="setup-panel">
+            <h2>题型</h2>
+            <div class="check-grid" id="typeGrid">
+              <label><input type="checkbox" value="single" checked /> 单选题</label>
+              <label><input type="checkbox" value="multi" checked /> 多选题</label>
+              <label><input type="checkbox" value="judge" checked /> 判断题</label>
+              <label><input type="checkbox" value="essay" checked /> 简答题</label>
+            </div>
+          </section>
+
+          <section class="setup-panel">
+            <h2>顺序</h2>
+            <div class="select-wrap">
+              <select id="orderSelect" aria-label="题目顺序">
+                <option value="fixed">固定顺序</option>
+                <option value="random">随机顺序</option>
+                <option value="wrongFirst">错题优先</option>
+                <option value="unseenFirst">未做优先</option>
+              </select>
+            </div>
+          </section>
+
+          <section class="setup-panel data-panel">
+            <h2>数据管理</h2>
+            <div class="data-actions">
+              <button class="soft-button" type="button" id="exportBtn">导出进度</button>
+              <label class="soft-button import-label" for="importInput">导入进度</label>
+              <input class="sr-only" id="importInput" type="file" accept="application/json,.json" />
+              <button class="soft-button danger" type="button" id="clearDataBtn">清空记录</button>
+            </div>
+          </section>
+
+          <section class="setup-panel start-panel">
+            <h2>开始</h2>
+            <p id="startHint">已选择 10 题，进入后自动正计时。</p>
+            <button class="start-button" type="button" id="startBtn">开始练习</button>
+          </section>
+        </div>
+      </section>
+
+      <section class="exam-view is-hidden" id="examView" aria-label="考试页">
+        <header class="exam-header">
+          <div class="paper-title">复习01</div>
+          <div class="paper-require">要求:<span id="requiredScore">100</span></div>
+          <div class="timer-pill" id="timerText">用时 00:00</div>
+          <button class="back-button" type="button" id="homeBtn" aria-label="返回首页">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>
+            首页
+          </button>
+        </header>
+
+        <main class="exam-layout">
+          <section class="paper-panel" aria-label="题目区域">
+            <div class="paper-tools">
+              <label class="search-wrap" for="searchInput">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                <input id="searchInput" type="search" placeholder="搜索题干、选项或答案" autocomplete="off" />
+              </label>
+              <div class="tool-actions">
+                <button class="soft-button" type="button" id="showWrongBtn">错题</button>
+                <button class="soft-button is-active" type="button" id="showAllBtn">本次</button>
+              </div>
+            </div>
+
+            <div class="question-list" id="questionList"></div>
+
+            <div class="empty-state is-hidden" id="emptyState">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"></path></svg>
+              <strong>没有匹配的题目</strong>
+              <span>换个关键词或清空筛选试试</span>
+            </div>
+          </section>
+
+          <aside class="answer-panel" aria-label="答题卡">
+            <div class="answer-summary">
+              <div class="legend-item">已做 <span class="legend-block done"></span></div>
+              <div class="legend-item">未做 <span class="legend-block"></span></div>
+              <div class="score-text">总分：<span id="totalScore">100</span></div>
+            </div>
+            <div class="answer-scroll" id="answerCard"></div>
+            <div class="submit-row">
+              <button class="outline-button" type="button" id="saveBtn">保存</button>
+              <button class="submit-button" type="button" id="submitBtn">提交作业</button>
+            </div>
+          </aside>
+        </main>
+      </section>
+
+      <button class="float-top is-hidden" type="button" id="floatTopBtn" aria-label="回到顶部">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5"></path><path d="m5 12 7-7 7 7"></path></svg>
+      </button>
+
+      <dialog class="report-dialog" id="reportDialog">
+        <div class="report-card">
+          <div class="report-head">
+            <div>
+              <p class="home-kicker">Report</p>
+              <h2>成绩报告</h2>
+            </div>
+            <button class="icon-close" type="button" id="closeReportBtn" aria-label="关闭报告">×</button>
+          </div>
+          <div class="report-stats" id="reportStats"></div>
+          <div class="report-body" id="reportBody"></div>
+          <div class="report-actions">
+            <button class="outline-button" type="button" id="reviewWrongBtn">复习错题</button>
+            <button class="submit-button" type="button" id="reportHomeBtn">回到首页</button>
+          </div>
+        </div>
+      </dialog>
+
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </div>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
+
+
