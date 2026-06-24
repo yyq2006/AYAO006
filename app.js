@@ -45,7 +45,7 @@ let questions = [];
 let records = createRecords();
 let setup = {
   mode: "all",
-  amount: "10",
+  amount: "all",
   types: ["single", "multi", "judge", "essay"],
   order: "fixed"
 };
